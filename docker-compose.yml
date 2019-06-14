@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+  axon-database:
+      image: mysql # percona
+      environment:
+        - MYSQL_ROOT_PASSWORD=mysecret-root-pwd
+        - MYSQL_DATABASE=demo-store
+        - MYSQL_USER=demo-user
+        - MYSQL_PASSWORD=demo-pwd
+      ports:
+        - 3306:3306
