@@ -7,11 +7,15 @@ import org.axonframework.queryhandling.QueryUpdateEmitter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component @Slf4j public class DemoEventEmitter {
+@Component
+@Slf4j
+public class DemoEventEmitter {
 
-    @Autowired QueryUpdateEmitter queryUpdateEmitter;
+    @Autowired
+    private QueryUpdateEmitter queryUpdateEmitter;
 
-    @EventHandler public void on(DemoEvent evt) {
+    @EventHandler
+    public void on(DemoEvent evt) {
         log.error("emitter: " + evt);
 
         queryUpdateEmitter.emit(DemoQuery.class, //
@@ -19,7 +23,8 @@ import org.springframework.stereotype.Component;
                 new DemoQueryResult(evt.getAggId()));
     }
 
-    @QueryHandler public DemoQueryResult handle(DemoQuery q) {
+    @QueryHandler
+    public DemoQueryResult handle(DemoQuery q) {
         return new DemoQueryResult(q.getAggId());
     }
 }
