@@ -13,13 +13,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.time.Duration;
 import java.util.UUID;
 
-@Slf4j @org.springframework.web.bind.annotation.RestController public class DemoController {
+@Slf4j
+@org.springframework.web.bind.annotation.RestController
+public class DemoController {
 
-    @Autowired CommandGateway commandGateway;
+    @Autowired
+    CommandGateway commandGateway;
 
-    @Autowired QueryGateway queryGateway;
+    @Autowired
+    QueryGateway queryGateway;
 
-    @RequestMapping @ResponseBody public String trigger(@CookieValue(name = "sagaId", required = false) String sagaId) {
+    @RequestMapping
+    @ResponseBody
+    public String trigger(@CookieValue(name = "sagaId", required = false) String sagaId) {
         String aggId = UUID.randomUUID().toString();
         log.error("aggId: " + aggId + "   " + "sagaId: " + sagaId);
 

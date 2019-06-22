@@ -2,24 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="038f7a61-da70-42f7-9c29-5f249cb7ce23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/DemoConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/demo/DemoAggregate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/demo/DemoAggregate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/demo/DemoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/demo/DemoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/demo/DemoEventEmitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/demo/DemoEventEmitter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/demo/DemoSaga.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/demo/DemoSaga.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/DemoAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/DemoAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/DemoSaga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/DemoSaga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntityTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -56,39 +48,69 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitterTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1206">
+              <caret line="202" column="30" selection-start-line="202" selection-start-column="30" selection-end-line="202" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state relative-caret-position="266">
+              <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-server-connector/4.1.1/1333bc98bff91ae40eb617b8a8eedce409e085d6/axon-server-connector-4.1.1-sources.jar!/org/axonframework/axonserver/connector/query/AxonServerQueryBus.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="421" column="24" selection-start-line="421" selection-start-column="24" selection-end-line="421" selection-end-column="24" />
+            <state relative-caret-position="193">
+              <caret line="41" column="38" lean-forward="true" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/common/Registration.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-server-connector/4.1.1/1333bc98bff91ae40eb617b8a8eedce409e085d6/axon-server-connector-4.1.1-sources.jar!/org/axonframework/axonserver/connector/command/AxonServerRegistration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="240">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -98,6 +120,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -112,11 +135,28 @@
       <find>eventhand</find>
       <find>delayedTasks</find>
       <find>applying = true</find>
-      <find>QueryUpdateEmitter</find>
       <find>updateEmitter</find>
       <find>subscribing</find>
       <find>subscribe</find>
+      <find>QueryUpdateEmitt</find>
+      <find>LOUD NOI</find>
+      <find>conditional</find>
+      <find>SimpleQueryBus</find>
+      <find>QueryUpdateEmitter</find>
+      <find>SimpleQuery</find>
+      <find>QueryBus</find>
+      <find>entityMana</find>
+      <find>em.</find>
+      <find>loadSub</find>
+      <find>localQueryUpdateEmitter</find>
+      <find>Optional.empty</find>
+      <find>queryGate</find>
+      <find>getSubscriptions</find>
     </findStrings>
+    <replaceStrings>
+      <replace>localSegment.queryUpdateEmitter()</replace>
+      <replace>em().</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,26 +165,50 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/demo/RestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/DemoQueryResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/DemoCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/DemoEvent.java" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/main/java/demo/DemoConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoSaga.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/DemoAggregate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBusConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/DemoSaga.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/config/DistributedQueryBusConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/config/DistributedQueryBusAutoConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring.factories" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/DistributedQueryBusAutoConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriberIdentityService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/DemoApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/DemoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionEntityRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/QueryUpdateEntityRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionEntityRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/QueryUpdateEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/QueryUpdateRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryBusTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdateStore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBusAutoConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/demo/DemoQuery.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStoreTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntityTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionId.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="19" />
-    <option name="width" value="1476" />
-    <option name="height" value="1033" />
+    <option name="width" value="1920" />
+    <option name="height" value="1035" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -152,52 +216,176 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="concurrent.saga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="concurrent.saga" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="concurrent.saga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="concurrent.saga" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="concurrent.saga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="concurrent.saga" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="concurrent.saga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="concurrent.saga" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="concurrent.saga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="concurrent.saga" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="concurrent.saga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="concurrent.saga" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 11 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 11 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="java.base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 11 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="java.base" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 11 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="java.base" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 11 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="java.base" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,13 +396,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="/usr/lib/jvm/openjdk-11/lib/src.zip!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.16131441" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -222,6 +411,11 @@
     </key>
   </component>
   <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
     <option name="ruleStates">
       <list>
         <RuleState>
@@ -233,12 +427,35 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DemoApp 8081">
-    <configuration name="DemoApp 8080" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
-      <module name="concurrent.saga.main" />
+  <component name="RunManager" selected="JUnit.All in axon-distributed-demo.test">
+    <configuration name="All in axon-distributed-demo.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="axon-distributed-demo.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubscriptionEntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="axon-distributed-demo.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="demo.*" />
+          <option name="PATTERN" value="org.axonframework.queryhandling.jpa.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.axonframework.queryhandling.jpa.model" />
+      <option name="MAIN_CLASS_NAME" value="org.axonframework.queryhandling.jpa.model.SubscriptionEntityTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApp 8080" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="axon-distributed-demo.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.axonframework.queryhandling.jpa.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -248,11 +465,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoApp 8081" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="concurrent.saga.main" />
+    <configuration name="DemoApp 8081" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="axon-distributed-demo.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="demo.*" />
+          <option name="PATTERN" value="org.axonframework.queryhandling.jpa.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -270,12 +487,17 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.DemoApp 8081" />
+      <item itemvalue="JUnit.All in axon-distributed-demo.test" />
       <item itemvalue="Spring Boot.DemoApp 8080" />
+      <item itemvalue="Spring Boot.DemoApp 8081" />
+      <item itemvalue="JUnit.SubscriptionEntityTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in axon-distributed-demo.test" />
         <item itemvalue="Spring Boot.DemoApp 8080" />
+        <item itemvalue="Spring Boot.DemoApp 8081" />
+        <item itemvalue="JUnit.SubscriptionEntityTest" />
       </list>
     </recent_temporary>
   </component>
@@ -289,91 +511,136 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560498469137</updated>
-      <workItem from="1560498472471" duration="20602000" />
+      <workItem from="1560498472471" duration="21569000" />
+      <workItem from="1561459493280" duration="13690000" />
+      <workItem from="1561489637731" duration="13393000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="SubscriptionEntityTest - 2019.06.25 at 23h 40m 38s.xml">
+      <configuration name="SubscriptionEntityTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SubscriptionEntityTest - 2019.06.25 at 23h 41m 57s.xml">
+      <configuration name="SubscriptionEntityTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SubscriptionEntityTest - 2019.06.25 at 23h 42m 20s.xml">
+      <configuration name="SubscriptionEntityTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 00h 11m 34s.xml">
+      <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 00h 12m 44s.xml">
+      <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 00h 27m 49s.xml">
+      <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 00h 31m 58s.xml">
+      <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 00h 36m 14s.xml">
+      <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 00h 43m 10s.xml">
+      <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 01h 05m 08s.xml">
+      <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20602000" />
+    <option name="totallyTimeSpent" value="48652000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="19" width="1476" height="1033" extended-state="0" />
+    <frame x="0" y="19" width="1920" height="1035" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Web" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24965133" />
-      <window_info id="Structure" order="1" side_tool="true" visible="true" weight="0.24965133" />
-      <window_info anchor="bottom" id="Build" weight="0.32978722" />
-      <window_info anchor="bottom" id="Spring" weight="0.3290735" />
-      <window_info anchor="bottom" id="Terminal" weight="0.3290735" />
-      <window_info anchor="bottom" id="Docker" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.3292683" />
-      <window_info anchor="bottom" id="Hybris Console" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23162939" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.4692949" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3290735" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3140244" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4174654" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32837406" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31243357" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4165781" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Gradle" weight="0.3298466" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32978722" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.3290735" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.36131775" />
+      <window_info anchor="bottom" id="Docker" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32837406" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Hybris Console" order="16" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.32837406" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.24965133" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.46219382" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.3298466" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="Image Layers" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Web" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.24965133" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="0" weight="0.32978722" />
-      <window_info anchor="bottom" id="Spring" order="1" weight="0.3290735" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3290735" />
-      <window_info anchor="bottom" id="Docker" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="5" weight="0.32978722" />
-      <window_info anchor="bottom" id="Hybris Console" order="6" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Message" order="10" />
-      <window_info anchor="bottom" id="Find" order="11" weight="0.3290735" />
-      <window_info anchor="bottom" id="Run" order="12" weight="0.3290735" />
-      <window_info anchor="bottom" id="Debug" order="13" visible="true" weight="0.399361" />
-      <window_info anchor="bottom" id="Cvs" order="14" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="16" />
-      <window_info anchor="right" id="Maven" order="0" />
-      <window_info anchor="right" id="Palette" order="1" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Gradle" order="3" weight="0.3298466" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Bean Validation" order="7" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Hierarchy" order="10" visible="true" weight="0.24965133" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23162939" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.4692949" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32837406" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31243357" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4165781" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32943678" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32978722" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.3290735" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.36131775" />
+      <window_info anchor="bottom" id="Docker" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32837406" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Hybris Console" order="16" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.32837406" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.46219382" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.3298466" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,464 +650,399 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/command/inspection/AnnotatedAggregate.java</url>
-          <line>451</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java</url>
+          <line>90</line>
           <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/command/inspection/AnnotatedAggregate.java</url>
-          <line>461</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/command/inspection/AnnotatedAggregate.java</url>
-          <line>283</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/AbstractEventBus.java</url>
-          <line>124</line>
-          <properties>
-            <option name="lambda-ordinal" value="0" />
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/eventstore/AbstractEventStore.java</url>
-          <line>62</line>
-          <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/eventstore/jpa/JpaEventStorageEngine.java</url>
-          <line>281</line>
-          <properties />
-          <option name="timeStamp" value="22" />
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java</url>
-          <line>16</line>
+          <line>21</line>
           <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/demo/DemoSaga.java</url>
-          <line>10</line>
-          <properties />
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/tokenstore/jdbc/JdbcTokenStore.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryBusTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="166" column="42" selection-start-line="166" selection-start-column="42" selection-end-line="166" selection-end-column="42" />
+        <state relative-caret-position="165">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/tokenstore/TokenStore.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.1.7.RELEASE/49e277d789a354a283eea42a0c6013e11d30f261/spring-beans-5.1.7.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="191" column="40" selection-start-line="191" selection-start-column="40" selection-end-line="191" selection-end-column="40" />
+        <state relative-caret-position="166">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/tokenstore/jpa/JpaTokenStore.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.1.7.RELEASE/49e277d789a354a283eea42a0c6013e11d30f261/spring-beans-5.1.7.RELEASE-sources.jar!/org/springframework/beans/factory/support/DefaultListableBeanFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-          <folding>
-            <element signature="e#0#128#1" expanded="true" />
-            <element signature="e#0#113#1" expanded="true" />
-            <element signature="e#0#138#1" expanded="true" />
-            <element signature="e#0#100#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="174">
+          <caret line="768" selection-start-line="768" selection-end-line="768" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/eventstore/SequenceEventStorageEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/eventstore/EventStorageEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/async/AsynchronousEventProcessingStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="42" column="83" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-spring/4.1.1/a56ace2e0cbf3c30ac4a486e71274c73f107e8fb/axon-spring-4.1.1-sources.jar!/org/axonframework/spring/config/AxonConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/async/FullConcurrencyPolicy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="24" column="52" lean-forward="true" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-spring-boot-autoconfigure/4.1.1/a661bcf990f0bec31db5098dfd3653579fd4b056/axon-spring-boot-autoconfigure-4.1.1-sources.jar!/org/axonframework/springboot/autoconfig/AxonAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="270" column="95" selection-start-line="270" selection-start-column="95" selection-end-line="270" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/saga/AnnotatedSagaManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/saga/AbstractSagaManager.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/SubscriptionQueryUpdateMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-configuration/4.1.1/f7d969ddf351d12dd92ff306ca4507058e979b91/axon-configuration-4.1.1-sources.jar!/org/axonframework/config/EventProcessingModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="596" column="37" selection-start-line="596" selection-start-column="37" selection-end-line="596" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/command/Aggregate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-          <folding>
-            <element signature="e#2036#2037#0" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/command/AggregateLifecycle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="187" selection-start-line="187" selection-end-line="187" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/EventSourcedAggregate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/EventSourcingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="164" selection-start-line="164" selection-end-line="164" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/command/LockingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/EventBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <element signature="e#1945#1946#0" expanded="true" />
-            <element signature="e#1991#1992#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/eventstore/EmbeddedEventStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="160" column="31" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="31" />
-          <folding>
-            <element signature="e#7480#7481#0" expanded="true" />
-            <element signature="e#7521#7522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/command/inspection/AnnotatedAggregate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="283" selection-start-line="283" selection-end-line="283" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/common/transaction/TransactionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/eventstore/AbstractEventStorageEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="e#4395#4396#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/eventstore/AbstractEventStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/TrackingEventProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="159" selection-start-line="159" selection-end-line="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/DefaultInterceptorChain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/MultiEventHandlerInvoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/SimpleEventHandlerInvoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/eventstore/jpa/JpaEventStorageEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
-          <folding>
-            <element signature="e#0#234#1" expanded="true" />
-            <element signature="e#0#260#1" expanded="true" />
-            <element signature="e#0#129#1" expanded="true" />
-            <element signature="e#0#317#1" expanded="true" />
-            <element signature="e#0#289#1" expanded="true" />
-            <element signature="e#0#91#1" expanded="true" />
-            <element signature="e#0#49#1" expanded="true" />
-            <element signature="e#0#45#1" expanded="true" />
-            <element signature="e#0#80#1" expanded="true" />
-            <element signature="e#0#116#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/AbstractEventBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/AbstractEventProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/unitofwork/BatchingUnitOfWork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/Scope.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/saga/AnnotatedSaga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="120" column="44" selection-start-line="120" selection-start-column="44" selection-end-line="120" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-modelling/4.1.1/5ac58fac232448216891b4ea81a6e56c045593ec/axon-modelling-4.1.1-sources.jar!/org/axonframework/modelling/saga/SagaMethodMessageHandlingMember.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoSaga.java">
+    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/lang/Override.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/QueryUpdateEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.1.7.RELEASE/d258e24896ba0a294a01b11395c5e9054f1e6f97/spring-context-5.1.7.RELEASE-sources.jar!/org/springframework/context/annotation/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="420" column="18" selection-start-line="420" selection-start-column="18" selection-end-line="420" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.1.7.RELEASE/d258e24896ba0a294a01b11395c5e9054f1e6f97/spring-context-5.1.7.RELEASE-sources.jar!/org/springframework/context/annotation/Lazy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.1.7.RELEASE/ee0fa04af9e3c9ce5176c1b8899effbbd5eaaf19/spring-core-5.1.7.RELEASE-sources.jar!/org/springframework/core/annotation/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.1.7.RELEASE/d258e24896ba0a294a01b11395c5e9054f1e6f97/spring-context-5.1.7.RELEASE-sources.jar!/org/springframework/context/annotation/Primary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="87" column="18" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.1.7.RELEASE/ee0fa04af9e3c9ce5176c1b8899effbbd5eaaf19/spring-core-5.1.7.RELEASE-sources.jar!/org/springframework/core/Ordered.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBusAutoConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3661#3662#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
+            <element signature="e#4016#4017#0" expanded="true" />
+            <element signature="e#4064#4065#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/GenericSubscriptionQueryUpdateMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/serialization/SimpleSerializedObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/commandhandling/distributed/DispatchMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/util/function/Consumer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/serialization/xml/XStreamSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/serialization/json/JacksonSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="52" column="48" lean-forward="true" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="63" column="6" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/responsetypes/ResponseType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/util/function/Predicate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/MessageDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#1747#1748#0" expanded="true" />
+            <element signature="e#1801#1802#0" expanded="true" />
+            <element signature="e#1849#1850#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoAggregate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/QueryBus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/QueryUpdateEmitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        <state relative-caret-position="209">
+          <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/SimpleQueryBus.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/SimpleQueryUpdateEmitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1852">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+        <state relative-caret-position="194">
+          <caret line="223" column="54" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-eventsourcing/4.1.1/e322da1c9233777354b147ff6080acab3248217c/axon-eventsourcing-4.1.1-sources.jar!/org/axonframework/eventsourcing/EventSourcingHandler.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/unitofwork/MessageProcessingContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+        <state relative-caret-position="202">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/EventHandler.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/unitofwork/AbstractUnitOfWork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        <state relative-caret-position="194">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/unitofwork/BatchingUnitOfWork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        <state relative-caret-position="194">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/AbstractEventProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.1.7.RELEASE/74577da2e20c7f366fb415d6ca54c880310ed061/spring-aop-5.1.7.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdateStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.1.7.RELEASE/ee0fa04af9e3c9ce5176c1b8899effbbd5eaaf19/spring-core-5.1.7.RELEASE-sources.jar!/org/springframework/cglib/proxy/MethodProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="217" selection-start-line="217" selection-end-line="217" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.1.7.RELEASE/74577da2e20c7f366fb415d6ca54c880310ed061/spring-aop-5.1.7.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="683" selection-start-line="683" selection-end-line="683" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoController.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        <state relative-caret-position="540">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/SimpleQueryUpdateEmitter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStoreTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+        <state relative-caret-position="349">
+          <caret line="85" column="17" lean-forward="true" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-spring-boot-autoconfigure/4.1.1/a661bcf990f0bec31db5098dfd3653579fd4b056/axon-spring-boot-autoconfigure-4.1.1-sources.jar!/org/axonframework/springboot/autoconfig/AxonServerAutoConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/security/MessageDigest.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="165" column="53" selection-start-line="165" selection-start-column="53" selection-end-line="165" selection-end-column="53" />
+        <state relative-caret-position="207">
+          <caret line="108" column="48" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-server-connector/4.1.1/1333bc98bff91ae40eb617b8a8eedce409e085d6/axon-server-connector-4.1.1-sources.jar!/org/axonframework/axonserver/connector/query/AxonServerQueryBus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="421" column="24" selection-start-line="421" selection-start-column="24" selection-end-line="421" selection-end-column="24" />
+        <state relative-caret-position="314">
+          <caret line="62" column="55" lean-forward="true" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/common/Registration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionId.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state relative-caret-position="315">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+          <folding>
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-server-connector/4.1.1/1333bc98bff91ae40eb617b8a8eedce409e085d6/axon-server-connector-4.1.1-sources.jar!/org/axonframework/axonserver/connector/command/AxonServerRegistration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/util/concurrent/ScheduledExecutorService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/openjdk-11/lib/src.zip!/java.base/java/util/concurrent/ScheduledExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="163" column="30" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1206">
+          <caret line="202" column="30" selection-start-line="202" selection-start-column="30" selection-end-line="202" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="41" column="38" lean-forward="true" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -883,6 +1085,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -894,7 +1097,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>main|concurrent.saga</last-edited>
+          <last-edited>axon-distributed-demo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
