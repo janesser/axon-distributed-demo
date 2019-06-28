@@ -6,6 +6,7 @@ import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
 import org.axonframework.serialization.Serializer;
 import org.springframework.data.repository.CrudRepository;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 public interface SubscriptionRepository<Q, I, U> extends CrudRepository<SubscriptionEntity<Q, I, U>, SubscriptionId> {
@@ -28,4 +29,7 @@ public interface SubscriptionRepository<Q, I, U> extends CrudRepository<Subscrip
         save(subscriptionEntity);
         return subscriptionEntity;
     }
+
+    @Transactional(Transactional.TxType.SUPPORTS)
+    Iterable<SubscriptionEntity<Q, I, U>> findAll();
 }

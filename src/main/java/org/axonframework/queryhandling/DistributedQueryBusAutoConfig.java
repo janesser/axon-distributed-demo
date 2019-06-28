@@ -67,7 +67,7 @@ public class DistributedQueryBusAutoConfig {
 
     // FROM AxonAutoConfiguration START
 
-    @ConditionalOnMissingBean(QueryInvocationErrorHandler.class)
+    // @ConditionalOnMissingBean(QueryInvocationErrorHandler.class)
     @Bean("localSegment")
     public SimpleQueryBus queryBus(AxonConfiguration axonConfiguration,
                                    TransactionManager transactionManager,
@@ -79,20 +79,6 @@ public class DistributedQueryBusAutoConfig {
                         QueryInvocationErrorHandler.class,
                         () -> LoggingQueryInvocationErrorHandler.builder().build()
                 ))
-                .queryUpdateEmitter(localQueryUpdateEmitter)
-                .build();
-    }
-
-    @ConditionalOnBean(QueryInvocationErrorHandler.class)
-    @Bean("localSegment")
-    public SimpleQueryBus queryBus(AxonConfiguration axonConfiguration,
-                                   TransactionManager transactionManager,
-                                   QueryInvocationErrorHandler eh,
-                                   @Qualifier("localQueryUpdateEmitter") QueryUpdateEmitter localQueryUpdateEmitter) {
-        return SimpleQueryBus.builder()
-                .messageMonitor(axonConfiguration.messageMonitor(QueryBus.class, "queryBus"))
-                .transactionManager(transactionManager)
-                .errorHandler(eh)
                 .queryUpdateEmitter(localQueryUpdateEmitter)
                 .build();
     }

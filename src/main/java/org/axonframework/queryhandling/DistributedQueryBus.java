@@ -7,6 +7,7 @@ import org.axonframework.messaging.MessageHandlerInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import reactor.util.concurrent.Queues;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
@@ -19,10 +20,10 @@ import java.util.stream.Stream;
  */
 public class DistributedQueryBus implements QueryBus {
 
-    @Autowired
+    @Resource
     private SimpleQueryBus localSegment;
 
-    @Autowired
+    @Resource
     private DistributedQueryUpdateEmitter distributedQueryUpdateEmitter;
 
     @Override

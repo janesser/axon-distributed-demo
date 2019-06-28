@@ -32,19 +32,25 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
     private QueryUpdateStore queryUpdateStore;
 
     @Resource
+    private SubscriberIdentityService subscriberIdentityService;
+
+    @Resource
     private Serializer messageSerializer;
 
     @Override
     public <U> void emit(Predicate<SubscriptionQueryMessage<?, ?, U>> filter, SubscriptionQueryUpdateMessage<U> update) {
+        String nodeId = subscriberIdentityService.getSubscriberIdentify();
+
         /*
          * 1. filter subscriptions
          * 2. for each: persist update
          */
         Stream<SubscriptionEntity<Object, Object, U>> subscriptions =
                 queryUpdateStore.getSubscriptionsFiltered(filter, messageSerializer);
-        subscriptions.forEach(subscription ->
-                queryUpdateStore.postUpdate(subscription, update)
-        );
+        subscriptions.forEach(subscription -> {
+            if (!subscription.getNodeId().equals(nodeId))
+                queryUpdateStore.postUpdate(subscription, update);
+        });
 
         localSegment.queryUpdateEmitter().emit(filter, update);
     }

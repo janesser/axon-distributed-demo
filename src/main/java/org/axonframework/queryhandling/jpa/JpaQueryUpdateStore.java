@@ -89,7 +89,7 @@ public class JpaQueryUpdateStore implements QueryUpdateStore {
 
     @Override
     public <U> void postUpdate(SubscriptionEntity subscription, SubscriptionQueryUpdateMessage<U> update) {
-        log.info("posting for nodeId: " + subscription + " update: " + update);
+        log.debug("posting for nodeId: " + subscription + " update: " + update);
         queryUpdateRepository.save(new QueryUpdateEntity(subscription, update, messageSerializer));
     }
 
@@ -102,7 +102,7 @@ public class JpaQueryUpdateStore implements QueryUpdateStore {
                             .stream()
                             .findFirst();
                     updateOpt.ifPresent(queryUpdateRepository::delete);
-                    updateOpt.ifPresent(upt -> log.info("Receiving update: " + upt));
+                    updateOpt.ifPresent(upt -> log.debug("Receiving update: " + upt));
                     return updateOpt.map(que -> que.getPayload(messageSerializer)).orElse(null);
                 }
         );
