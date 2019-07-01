@@ -4,16 +4,24 @@
     <list default="true" id="038f7a61-da70-42f7-9c29-5f249cb7ce23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/AbstractQueryBusBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/AbstractQueryBusBenchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusBenchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/SimpleQueryBusBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/SimpleQueryBusBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/QueryUpdateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/QueryUpdateEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/SubscriptionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/SubscriptionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/QueryUpdateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/QueryUpdateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/SubscriptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/SubscriptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/EmbeddedRedisTestConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/EmbeddedRedisTestConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusRedisBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusRedisBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoriesRedisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoriesRedisTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="C:\Users\jan\IdeaProjects\axon-distributed-demo\.idea\shelf/" />
+    <ignored path="testdb.lck" />
+    <ignored path="testdb.lobs" />
+    <ignored path="testdb.log" />
+    <ignored path="testdb.properties" />
+    <ignored path="testdb.script" />
+    <ignored mask="testdb*" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +44,25 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="concurrent.saga" type="f1a62948:ProjectNode" />
+                <item name="axon-distributed-demo" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="axon-distributed-demo" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="axon-distributed-demo" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="axon-distributed-demo" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -46,21 +72,12 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusBenchmark.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoriesRedisTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+            <state relative-caret-position="192">
+              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,10 +86,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/QueryUpdateEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+            <state relative-caret-position="187">
+              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusRedisBenchmark.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/EmbeddedRedisTestConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -89,14 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EnableAutoConfiguration</find>
-      <find>eventhandling</find>
-      <find>owner</find>
-      <find>splitSegment</find>
-      <find>strat</find>
-      <find>eventhand</find>
-      <find>delayedTasks</find>
-      <find>applying = true</find>
       <find>updateEmitter</find>
       <find>subscribing</find>
       <find>subscribe</find>
@@ -115,67 +145,97 @@
       <find>queryGate</find>
       <find>getSubscriptions</find>
       <find>info</find>
+      <find>await</find>
+      <find>EnableJpa</find>
+      <find>getConfiguration</find>
+      <find>EnableJpaRepositoriesConfiguration</find>
+      <find>package</find>
+      <find>customconver</find>
+      <find>after</find>
+      <find>Mapping</find>
+      <find>sca</find>
+      <find>interrup</find>
+      <find>deleteBy</find>
+      <find>persist</find>
     </findStrings>
     <replaceStrings>
       <replace>localSegment.queryUpdateEmitter()</replace>
       <replace>em().</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="ONTO" value="refs/heads/master" />
+  </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/demo/RestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoQueryResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoEvent.java" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoAggregate.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBusConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoSaga.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/config/DistributedQueryBusConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/config/DistributedQueryBusAutoConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring.factories" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DistributedQueryBusAutoConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriberIdentityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionEntityRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/QueryUpdateEntityRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionEntityRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/QueryUpdateRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryBusTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdateStore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/config/SubscriptionIdRedisWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/config/SubscriptionIdRedisReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/springframework/boot/autoconfigure/data/redis/DistributedQueryBusRedisAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/SubscriptionIdRedisByteWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/SubscriptionIdRedisWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/SubscriptionIdRedisReader.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/AbstractBenchmarkTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/application-spring-test-hsqldb.yml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBus.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBusAutoConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoQuery.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStoreTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntityTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionId.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriberIdentityService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/DistributedQueryUpdateStoreCleansing.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/JpaStoreCleansing.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/application-spring-test-redis.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatepolling/QueryUpdatePollingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/AbstractQueryUpdatePollingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingScheduledExecutorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/config/DistributedQueryBusAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingSingleThreadService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/QueryUpdateRedisStringWriter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/EmbeddedRedisTestConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/QueryUpdateRepositoryRedisTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/SubscriptionRepositoryRedisTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/CustomRedisConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/config/DistributedQueryBusRedisAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/SubscriptionIdRedisBytesReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/SubscriptionIdRedisBytesWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/SubscriptionIdRedisStringReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/SubscriptionIdRedisStringWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/redis/SubscriptionRedisBytesWriter.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitterTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/demo/DemoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/QueryUpdateEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/SimpleQueryBusBenchmark.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusJpaBenchmark.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/JacksonSerializerTestConfig.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoryTestUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoriesJpaTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/AbstractQueryBusBenchmark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/config/DistributedQueryBusJpaAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusBenchmark.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionId.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/DistributedQueryUpdateStore.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/AbstractRepositoriesTest.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/SubscriptionEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/QueryUpdateEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/QueryUpdateRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/SubscriptionRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoriesRedisTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusRedisBenchmark.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/EmbeddedRedisTestConfiguration.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="19" />
-    <option name="width" value="1024" />
-    <option name="height" value="555" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -183,8 +243,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,46 +254,6 @@
               <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
@@ -267,10 +285,137 @@
               <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
               <item name="benchmark" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="queryhandling" type="462c0819:PsiDirectoryNode" />
+              <item name="updatestore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="axon-distributed-demo" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-autoconfigure-2.1.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-autoconfigure-2.1.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-autoconfigure-2.1.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-autoconfigure-2.1.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-test-autoconfigure-2.1.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-test-autoconfigure-2.1.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:2.1.5.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-test-autoconfigure-2.1.5.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.data:spring-data-redis:2.1.8.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.data:spring-data-redis:2.1.8.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.1.8.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.data:spring-data-redis:2.1.8.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.1.8.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.data:spring-data-redis:2.1.8.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.1.8.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="axon-distributed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Gradle: org.springframework.data:spring-data-redis:2.1.8.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-data-redis-2.1.8.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,11 +426,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="/usr/lib/jvm/openjdk-11/lib/src.zip!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.16131441" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -293,6 +438,28 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="demo" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.axonframework.queryhandling" />
+      <recent name="org.axonframework.queryhandling.updatepolling" />
+      <recent name="org.axonframework.queryhandling.config" />
+      <recent name="org.springframework.boot.autoconfigure.data.redis" />
+    </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="org.axonframework.queryhandling.repository" />
+      <recent name="org.axonframework.queryhandling.benchmark" />
+      <recent name="org.axonframework.queryhandling" />
+      <recent name="org.axonframework.queryhandling.updatestore.repository.redis" />
+      <recent name="org.axonframework.queryhandling.config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.axonframework.queryhandling.repository" />
+      <recent name="org.axonframework.queryhandling.updatestore.repository.redis" />
+      <recent name="org.axonframework.queryhandling.config" />
+      <recent name="org.axonframework.queryhandling.benchmark" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jan\IdeaProjects\axon-distributed-demo\src\test\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -307,17 +474,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DistributedQueryBusBenchmark">
+  <component name="RunManager" selected="JUnit.All in axon-distributed-demo.test">
     <configuration name="All in axon-distributed-demo.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="axon-distributed-demo.test" />
-      <extension name="recording" autostart="true" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DistributedQueryBusBenchmark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DistributedQueryBusJpaBenchmark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="axon-distributed-demo.test" />
       <extension name="coverage">
         <pattern>
@@ -325,69 +491,74 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <extension name="recording" autostart="true">
-        <include_pattern>
-          <option name="PATTERN" value="org.axonframework.queryhandling.*" />
-          <option name="ENABLED" value="true" />
-          <option name="INCLUDE" value="true" />
-        </include_pattern>
-        <include_pattern>
-          <option name="PATTERN" value="demo.*" />
-          <option name="ENABLED" value="true" />
-          <option name="INCLUDE" value="true" />
-        </include_pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="org.axonframework.queryhandling.benchmark" />
-      <option name="MAIN_CLASS_NAME" value="org.axonframework.queryhandling.benchmark.DistributedQueryBusBenchmark" />
+      <option name="MAIN_CLASS_NAME" value="org.axonframework.queryhandling.benchmark.DistributedQueryBusJpaBenchmark" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleQueryBusBenchmark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DistributedQueryUpdateStoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="axon-distributed-demo.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.axonframework.queryhandling.benchmark.*" />
+          <option name="PATTERN" value="org.axonframework.queryhandling.updatestore.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <extension name="recording" autostart="true" />
-      <option name="PACKAGE_NAME" value="org.axonframework.queryhandling.benchmark" />
-      <option name="MAIN_CLASS_NAME" value="org.axonframework.queryhandling.benchmark.SimpleQueryBusBenchmark" />
+      <option name="PACKAGE_NAME" value="org.axonframework.queryhandling.updatestore" />
+      <option name="MAIN_CLASS_NAME" value="org.axonframework.queryhandling.updatestore.DistributedQueryUpdateStoreTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubscriptionEntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoriesJpaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="axon-distributed-demo.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.axonframework.queryhandling.jpa.model.*" />
+          <option name="PATTERN" value="org.axonframework.queryhandling.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <extension name="recording" autostart="true" />
-      <option name="PACKAGE_NAME" value="org.axonframework.queryhandling.jpa.model" />
-      <option name="MAIN_CLASS_NAME" value="org.axonframework.queryhandling.jpa.model.SubscriptionEntityTest" />
+      <option name="PACKAGE_NAME" value="org.axonframework.queryhandling.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.axonframework.queryhandling.repository.RepositoriesJpaTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RepositoriesRedisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="axon-distributed-demo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.axonframework.queryhandling.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.axonframework.queryhandling.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.axonframework.queryhandling.repository.RepositoriesRedisTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.RepositoriesRedisTest" />
       <item itemvalue="JUnit.All in axon-distributed-demo.test" />
-      <item itemvalue="JUnit.SubscriptionEntityTest" />
-      <item itemvalue="JUnit.SimpleQueryBusBenchmark" />
-      <item itemvalue="JUnit.DistributedQueryBusBenchmark" />
+      <item itemvalue="JUnit.DistributedQueryUpdateStoreTest" />
+      <item itemvalue="JUnit.DistributedQueryBusJpaBenchmark" />
+      <item itemvalue="JUnit.RepositoriesJpaTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DistributedQueryBusBenchmark" />
-        <item itemvalue="JUnit.SimpleQueryBusBenchmark" />
         <item itemvalue="JUnit.All in axon-distributed-demo.test" />
-        <item itemvalue="JUnit.SubscriptionEntityTest" />
+        <item itemvalue="JUnit.RepositoriesRedisTest" />
+        <item itemvalue="JUnit.RepositoriesJpaTest" />
+        <item itemvalue="JUnit.DistributedQueryBusJpaBenchmark" />
+        <item itemvalue="JUnit.DistributedQueryUpdateStoreTest" />
       </list>
     </recent_temporary>
   </component>
@@ -405,38 +576,95 @@
       <workItem from="1561459493280" duration="13690000" />
       <workItem from="1561489637731" duration="18930000" />
     </task>
+    <task id="LOCAL-00001" summary="add redis support">
+      <created>1562018746931</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562018746931</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add redis support">
+      <created>1562365632881</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562365632881</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add redis support">
+      <created>1562367647550</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562367647550</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add redis support">
+      <created>1562371597652</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562371597652</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add redis support">
+      <created>1562371942962</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562371942962</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add redis support">
+      <created>1562400791218</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562400791218</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add redis support">
+      <created>1562400841794</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562400841794</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add redis support">
+      <created>1562484071544</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562484071544</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 01h 05m 08s.xml">
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 11h 56m 41s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 12h 01m 51s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 12h 02m 06s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 12h 02m 46s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 12h 03m 08s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 12h 03m 25s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 12h 03m 54s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 12h 04m 09s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RepositoriesRedisTest - 2019.07.07 at 12h 04m 44s.xml">
+      <configuration name="RepositoriesRedisTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_axon-distributed-demo_test - 2019.07.07 at 12h 08m 49s.xml">
       <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_axon-distributed-demo_test - 2019.06.26 at 06h 41m 08s.xml">
-      <configuration name="All in axon-distributed-demo.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleQueryBusBenchmark - 2019.06.29 at 21h 13m 46s.xml">
-      <configuration name="SimpleQueryBusBenchmark" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DistributedQueryBusBenchmark - 2019.06.29 at 21h 17m 42s.xml">
-      <configuration name="DistributedQueryBusBenchmark" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DistributedQueryBusBenchmark - 2019.06.29 at 21h 25m 25s.xml">
-      <configuration name="DistributedQueryBusBenchmark" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DistributedQueryBusBenchmark - 2019.06.29 at 23h 34m 03s.xml">
-      <configuration name="DistributedQueryBusBenchmark" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DistributedQueryBusBenchmark - 2019.06.29 at 23h 51m 41s.xml">
-      <configuration name="DistributedQueryBusBenchmark" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleQueryBusBenchmark - 2019.06.29 at 23h 53m 40s.xml">
-      <configuration name="SimpleQueryBusBenchmark" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DistributedQueryBusBenchmark - 2019.06.29 at 23h 57m 15s.xml">
-      <configuration name="DistributedQueryBusBenchmark" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DistributedQueryBusBenchmark - 2019.06.30 at 00h 12m 11s.xml">
-      <configuration name="DistributedQueryBusBenchmark" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -452,46 +680,46 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="19" width="1024" height="555" extended-state="0" />
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2311609" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.4692949" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49928468" weight="0.3153527" />
+      <window_info id="Structure" order="1" sideWeight="0.5007153" side_tool="true" weight="0.4813278" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run with VisualVM" weight="0.3297414" />
-      <window_info anchor="bottom" id="Debug with VisualVM" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32837406" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4698276" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4165781" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32943678" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.32978722" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.3290735" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.5387931" />
-      <window_info anchor="bottom" id="Docker" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3297414" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3275862" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" />
-      <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" />
-      <window_info anchor="bottom" id="Hybris Console" order="16" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.32837406" />
-      <window_info anchor="bottom" id="Panda Executor" order="18" visible="true" weight="0.5323276" />
-      <window_info anchor="bottom" id="JProfiler" order="19" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.54771787" weight="0.69957083" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.53665286" weight="0.4134478" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49861878" weight="0.32857144" />
+      <window_info anchor="bottom" id="Build" order="6" weight="0.32978722" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3290735" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49377593" weight="0.53648067" />
+      <window_info anchor="bottom" id="Docker" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32904148" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.5375335" weight="0.32390383" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="14" sideWeight="0.52420473" visible="true" weight="0.32761088" />
+      <window_info anchor="bottom" id="Hybris Console" order="15" />
+      <window_info anchor="bottom" id="Run Dashboard" order="16" weight="0.32837406" />
+      <window_info anchor="bottom" id="Panda Executor" order="17" visible="true" weight="0.5323276" />
+      <window_info anchor="bottom" id="JProfiler" order="18" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="19" weight="0.3297414" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="20" />
+      <window_info anchor="bottom" id="Run" order="21" sideWeight="0.4757953" side_tool="true" visible="true" weight="0.32761088" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.46130347" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.406639" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" weight="0.3298466" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.32892057" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -499,8 +727,8 @@
       <window_info active="true" anchor="right" id="Panda" order="11" visible="true" weight="0.4490835" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2311609" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.4692949" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49928468" weight="0.3153527" />
+      <window_info id="Structure" order="1" sideWeight="0.5007153" side_tool="true" weight="0.4813278" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -508,74 +736,63 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32837406" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.67456895" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4165781" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32943678" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.32978722" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.3290735" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.36206895" />
-      <window_info anchor="bottom" id="Docker" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3275862" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" />
-      <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" />
-      <window_info anchor="bottom" id="Hybris Console" order="16" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.32837406" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.54771787" visible="true" weight="0.69957083" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.53665286" weight="0.4134478" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49861878" weight="0.32857144" />
+      <window_info anchor="bottom" id="Build" order="6" weight="0.32978722" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3290735" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49447513" weight="0.5371429" />
+      <window_info anchor="bottom" id="Docker" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32904148" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.5375335" weight="0.32390383" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.52558786" weight="0.32761088" />
+      <window_info anchor="bottom" id="Hybris Console" order="15" />
+      <window_info anchor="bottom" id="Run Dashboard" order="16" weight="0.32837406" />
+      <window_info anchor="bottom" id="Panda Executor" order="17" visible="true" weight="0.5323276" />
+      <window_info anchor="bottom" id="JProfiler" order="18" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="19" weight="0.3297414" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="20" />
+      <window_info anchor="bottom" id="Run" order="21" sideWeight="0.46334717" side_tool="true" weight="0.4134478" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.46219382" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.406639" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" weight="0.3298466" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.32892057" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Bean Validation" order="10" />
+      <window_info active="true" anchor="right" id="Panda" order="11" visible="true" weight="0.4490835" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java</url>
-          <line>92</line>
-          <properties />
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java</url>
-          <line>108</line>
-          <properties />
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/demo/DemoController.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add redis support" />
+    <option name="LAST_COMMIT_MESSAGE" value="add redis support" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -587,347 +804,380 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/serialization/SimpleSerializedObject.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test-autoconfigure/2.1.5.RELEASE/b0def6748d91b587f1f934be7277e8e4f2c30161/spring-boot-test-autoconfigure-2.1.5.RELEASE-sources.jar!/org/springframework/boot/test/autoconfigure/orm/jpa/TestEntityManagerAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+        <state relative-caret-position="272">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/commandhandling/distributed/DispatchMessage.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.3.10.Final/ceb495c8397086f17246c31dd1fac06a1a1ab2c3/hibernate-core-5.3.10.Final-sources.jar!/org/hibernate/ejb/HibernateEntityManagerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="65" lean-forward="true" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.3.10.Final/ceb495c8397086f17246c31dd1fac06a1a1ab2c3/hibernate-core-5.3.10.Final-sources.jar!/org/hibernate/jpa/HibernateEntityManagerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
-          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/util/function/Consumer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/serialization/xml/XStreamSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="48" column="30" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/serialization/json/JacksonSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="52" column="48" lean-forward="true" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="63" column="6" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/responsetypes/ResponseType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/util/function/Predicate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/MessageDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#1747#1748#0" expanded="true" />
-            <element signature="e#1801#1802#0" expanded="true" />
-            <element signature="e#1849#1850#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoAggregate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/QueryUpdateEmitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/SimpleQueryUpdateEmitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="223" column="54" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/unitofwork/MessageProcessingContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/unitofwork/AbstractUnitOfWork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/messaging/unitofwork/BatchingUnitOfWork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/eventhandling/AbstractEventProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.1.7.RELEASE/74577da2e20c7f366fb415d6ca54c880310ed061/spring-aop-5.1.7.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.1.7.RELEASE/ee0fa04af9e3c9ce5176c1b8899effbbd5eaaf19/spring-core-5.1.7.RELEASE-sources.jar!/org/springframework/cglib/proxy/MethodProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="217" selection-start-line="217" selection-end-line="217" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.1.7.RELEASE/74577da2e20c7f366fb415d6ca54c880310ed061/spring-aop-5.1.7.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="683" selection-start-line="683" selection-end-line="683" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntityTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/security/MessageDigest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="108" column="48" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
-          <folding>
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-11-openjdk-amd64!/java.base/java/util/concurrent/ScheduledExecutorService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/openjdk-11/lib/src.zip!/java.base/java/util/concurrent/ScheduledExecutorService.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitterTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoEventEmitter.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.5.RELEASE/95789d4de06a4c37eebb1f6ce7bc7290951d60c7/spring-boot-autoconfigure-2.1.5.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/jdbc/DataSourceAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.2.9.RELEASE/3023f7616ade740a0bfb78a002b0d6df30d1464/reactor-core-3.2.9.RELEASE-sources.jar!/reactor/core/publisher/Mono.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.5.RELEASE/95789d4de06a4c37eebb1f6ce7bc7290951d60c7/spring-boot-autoconfigure-2.1.5.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="3640" column="28" selection-start-line="3640" selection-start-column="28" selection-end-line="3640" selection-end-column="28" />
+        <state relative-caret-position="195">
+          <caret line="103" column="10" selection-start-line="103" selection-start-column="10" selection-end-line="103" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/SubscriptionQueryResult.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.5.RELEASE/95789d4de06a4c37eebb1f6ce7bc7290951d60c7/spring-boot-autoconfigure-2.1.5.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/data/jpa/EntityManagerFactoryDependsOnPostProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+        <state relative-caret-position="68">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-messaging/4.1.1/f29792121ef7e73684d6ff6e905189faa8fb16d2/axon-messaging-4.1.1-sources.jar!/org/axonframework/queryhandling/DefaultSubscriptionQueryResult.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.5.RELEASE/95789d4de06a4c37eebb1f6ce7bc7290951d60c7/spring-boot-autoconfigure-2.1.5.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="-31">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/demo/DemoController.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.5.RELEASE/95789d4de06a4c37eebb1f6ce7bc7290951d60c7/spring-boot-autoconfigure-2.1.5.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/data/jpa/JpaRepositoriesAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="297">
+          <caret line="69" column="38" lean-forward="true" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.persistence/javax.persistence-api/2.2/462dff65f6f8bde02ee9d8afe07fe9d50268199c/javax.persistence-api-2.2-sources.jar!/javax/persistence/EntityManagerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.1.5.RELEASE/95789d4de06a4c37eebb1f6ce7bc7290951d60c7/spring-boot-autoconfigure-2.1.5.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.axonframework/axon-spring-boot-autoconfigure/4.1.1/a661bcf990f0bec31db5098dfd3653579fd4b056/axon-spring-boot-autoconfigure-4.1.1-sources.jar!/org/axonframework/springboot/autoconfig/JpaAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="50" selection-start-line="50" selection-end-line="53" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/QueryUpdateEntity.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.1.7.RELEASE/22971cf7972976188c70c5bf8a10d5ecf527ed2b/spring-tx-5.1.7.RELEASE-sources.jar!/org/springframework/transaction/support/AbstractPlatformTransactionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        <state relative-caret-position="238">
+          <caret line="82" column="94" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryBus.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.1.7.RELEASE/c2d409f7d17f71c4cabc639d5556b6e000130656/spring-orm-5.1.7.RELEASE-sources.jar!/org/springframework/orm/jpa/JpaTransactionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+        <state relative-caret-position="136">
+          <caret line="113" column="60" lean-forward="true" selection-start-line="113" selection-start-column="60" selection-end-line="113" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStoreTest.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.1.7.RELEASE/22971cf7972976188c70c5bf8a10d5ecf527ed2b/spring-tx-5.1.7.RELEASE-sources.jar!/org/springframework/transaction/TransactionStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="29" selection-start-line="29" selection-end-line="29" selection-end-column="30" />
+        <state relative-caret-position="51">
+          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.1.7.RELEASE/22971cf7972976188c70c5bf8a10d5ecf527ed2b/spring-tx-5.1.7.RELEASE-sources.jar!/org/springframework/transaction/PlatformTransactionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.1.7.RELEASE/22971cf7972976188c70c5bf8a10d5ecf527ed2b/spring-tx-5.1.7.RELEASE-sources.jar!/org/springframework/transaction/support/DefaultTransactionDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-578">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.1.7.RELEASE/22971cf7972976188c70c5bf8a10d5ecf527ed2b/spring-tx-5.1.7.RELEASE-sources.jar!/org/springframework/transaction/TransactionDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="42" column="58" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/JacksonSerializerTestConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoriesJpaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/2.1.8.RELEASE/a7e9903c809af0f834e775b14c99b3f846eb0187/spring-data-jpa-2.1.8.RELEASE-sources.jar!/org/springframework/data/jpa/repository/support/SimpleJpaRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="156" selection-start-line="156" selection-end-line="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/config/DistributedQueryBusJpaAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/JpaStoreCleansing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/AbstractBenchmarkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/AbstractQueryBusBenchmark.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        <state relative-caret-position="297">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/SimpleQueryBusBenchmark.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/SubscriptionId.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdateStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/model/SubscriptionEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="221">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/DistributedQueryUpdateEmitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+        <state relative-caret-position="255">
+          <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/QueryUpdateRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="170">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.1.7.RELEASE/d258e24896ba0a294a01b11395c5e9054f1e6f97/spring-context-5.1.7.RELEASE-sources.jar!/org/springframework/stereotype/Indexed.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/AbstractQueryUpdatePollingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        <state relative-caret-position="85">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/QueryUpdatePollingSingleThreadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="122">
+            <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="46" column="81" selection-start-line="46" selection-start-column="81" selection-end-line="46" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/DistributedQueryUpdateStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/ojdkbuild/java-11-openjdk-11.0.3-1/lib/src.zip!/java.base/java/lang/invoke/LambdaForm.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.1.8.RELEASE/b1c7c71e7e3eea24a59cfdbc974d0ed555d02cae/spring-data-commons-2.1.8.RELEASE-sources.jar!/org/springframework/data/repository/Repository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        <state relative-caret-position="218">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.1.8.RELEASE/b1c7c71e7e3eea24a59cfdbc974d0ed555d02cae/spring-data-commons-2.1.8.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="26" column="51" lean-forward="true" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+        <state relative-caret-position="17">
+          <caret line="26" column="18" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.1.7.RELEASE/d258e24896ba0a294a01b11395c5e9054f1e6f97/spring-context-5.1.7.RELEASE-sources.jar!/org/springframework/stereotype/Repository.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/2.1.8.RELEASE/932e21404936531040f5945d6f4187e4c861be9/spring-data-redis-2.1.8.RELEASE-sources.jar!/org/springframework/data/redis/core/RedisOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+        <state relative-caret-position="221">
+          <caret line="298" column="15" lean-forward="true" selection-start-line="298" selection-start-column="15" selection-end-line="298" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/JpaQueryUpdateStore.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.1.7.RELEASE/74577da2e20c7f366fb415d6ca54c880310ed061/spring-aop-5.1.7.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="200" selection-start-line="200" selection-end-line="200" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/2.1.8.RELEASE/932e21404936531040f5945d6f4187e4c861be9/spring-data-redis-2.1.8.RELEASE-sources.jar!/org/springframework/data/redis/core/RedisTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+          <caret line="200" column="25" lean-forward="true" selection-start-line="200" selection-start-column="25" selection-end-line="200" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/jpa/repository/SubscriptionRepository.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.1.8.RELEASE/b1c7c71e7e3eea24a59cfdbc974d0ed555d02cae/spring-data-commons-2.1.8.RELEASE-sources.jar!/org/springframework/data/repository/support/DomainClassConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        <state relative-caret-position="128">
+          <caret line="208" column="10" selection-start-line="208" selection-start-column="10" selection-end-line="208" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/SubscriptionEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoryTestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/AbstractRepositoriesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="119" column="24" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusBenchmark.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/SubscriptionRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        <state relative-caret-position="178">
+          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/repository/QueryUpdateRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/repository/RepositoriesRedisTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.1.7.RELEASE/ee0fa04af9e3c9ce5176c1b8899effbbd5eaaf19/spring-core-5.1.7.RELEASE-sources.jar!/org/springframework/core/convert/converter/Converter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/2.1.8.RELEASE/932e21404936531040f5945d6f4187e4c861be9/spring-data-redis-2.1.8.RELEASE-sources.jar!/org/springframework/data/redis/core/index/IndexValueTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/2.1.8.RELEASE/932e21404936531040f5945d6f4187e4c861be9/spring-data-redis-2.1.8.RELEASE-sources.jar!/org/springframework/data/redis/core/index/RedisIndexDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+          <folding>
+            <element signature="e#3890#3891#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/2.1.8.RELEASE/932e21404936531040f5945d6f4187e4c861be9/spring-data-redis-2.1.8.RELEASE-sources.jar!/org/springframework/data/redis/core/index/Indexed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/axonframework/queryhandling/updatestore/model/QueryUpdateEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/benchmark/DistributedQueryBusRedisBenchmark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/axonframework/queryhandling/EmbeddedRedisTestConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1007,6 +1257,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Gradle: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

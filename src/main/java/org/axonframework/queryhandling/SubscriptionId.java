@@ -2,30 +2,24 @@ package org.axonframework.queryhandling;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
 import org.axonframework.serialization.SerializedObject;
 import org.axonframework.serialization.Serializer;
 import org.springframework.util.DigestUtils;
 
+import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
+@Embeddable
 public class SubscriptionId implements Serializable {
 
     public static <Q> SerializedObject<byte[]> serialize(Q query, Serializer serializer) {
         return serializer.serialize(query, byte[].class);
     }
 
-    public static String hash(byte[] payload) {
+    private static String hash(byte[] payload) {
         return DigestUtils.md5DigestAsHex(payload);
-    }
-
-    static SubscriptionId from(SubscriptionEntity entity) {
-        return new SubscriptionId(
-                entity.getNodeId(),
-                entity.getQueryPayloadHash()
-        );
     }
 
     public static SubscriptionId from(String nodeId, SubscriptionQueryMessage<?, ?, ?> message, Serializer serializer) {
@@ -51,7 +45,7 @@ public class SubscriptionId implements Serializable {
         this.queryPayloadHash = hash(payload);
     }
 
-    private SubscriptionId(String nodeId, String payloadHash) {
+    public SubscriptionId(String nodeId, String payloadHash) {
         this.nodeId = nodeId;
 
         this.queryPayloadHash = payloadHash;

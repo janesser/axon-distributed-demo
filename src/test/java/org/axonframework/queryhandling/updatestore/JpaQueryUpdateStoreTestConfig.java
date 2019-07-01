@@ -1,4 +1,4 @@
-package org.axonframework.queryhandling.jpa;
+package org.axonframework.queryhandling.updatestore;
 
 import org.axonframework.serialization.Serializer;
 import org.axonframework.serialization.json.JacksonSerializer;

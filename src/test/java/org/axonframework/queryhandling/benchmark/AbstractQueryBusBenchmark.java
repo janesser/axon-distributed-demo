@@ -4,7 +4,11 @@ import demo.DemoApp;
 import demo.DemoQuery;
 import demo.DemoQueryResult;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
-import org.axonframework.queryhandling.*;
+import org.axonframework.queryhandling.DefaultQueryGateway;
+import org.axonframework.queryhandling.QueryBus;
+import org.axonframework.queryhandling.QueryGateway;
+import org.axonframework.queryhandling.SubscriptionQueryResult;
+import org.axonframework.queryhandling.config.DistributedQueryBusAutoConfiguration;
 import org.junit.runner.RunWith;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
@@ -22,36 +26,41 @@ import java.util.UUID;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {
-        DistributedQueryBusAutoConfig.class,
+        DistributedQueryBusAutoConfiguration.class,
         DemoApp.class
 })
 @BenchmarkMode(Mode.Throughput)
 @State(Scope.Benchmark)
-@ActiveProfiles("spring-test")
+@ActiveProfiles("spring-test-hsqldb")
 public abstract class AbstractQueryBusBenchmark extends AbstractBenchmarkTest {
 
     private static QueryBus queryBus;
 
-    protected void setQueryBus(QueryBus queryBus) {
+    void setQueryBus(QueryBus queryBus) {
         AbstractQueryBusBenchmark.queryBus = queryBus;
     }
 
     public void benchmarkQueryBus() {
-        QueryGateway queryGateway = DefaultQueryGateway.builder().queryBus(queryBus).build();
+        QueryGateway queryGateway = DefaultQueryGateway.builder()
+                .queryBus(queryBus)
+                .build();
         String aggId = UUID.randomUUID().toString();
 
         DemoQuery q = new DemoQuery(aggId);
 
-        SubscriptionQueryResult<DemoQueryResult, DemoQueryResult> result = queryGateway.subscriptionQuery(
-                q,
-                ResponseTypes.instanceOf(DemoQueryResult.class),
-                ResponseTypes.instanceOf(DemoQueryResult.class)
-        );
+        SubscriptionQueryResult<DemoQueryResult, DemoQueryResult> result =
+                queryGateway.subscriptionQuery(
+                        q,
+                        ResponseTypes.instanceOf(DemoQueryResult.class),
+                        ResponseTypes.instanceOf(DemoQueryResult.class)
+                );
 
         queryBus.queryUpdateEmitter().emit(DemoQuery.class,
-                dq -> true,
+                dq -> dq.equals(q),
                 new DemoQueryResult(aggId));
 
         result.updates().blockFirst(Duration.ofSeconds(1L));
+
+        result.close();
     }
 }

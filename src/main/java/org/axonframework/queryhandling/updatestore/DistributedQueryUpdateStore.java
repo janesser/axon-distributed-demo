@@ -1,35 +1,24 @@
-package org.axonframework.queryhandling.jpa;
+package org.axonframework.queryhandling.updatestore;
 
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.messaging.responsetypes.ResponseType;
 import org.axonframework.queryhandling.*;
-import org.axonframework.queryhandling.jpa.model.QueryUpdateEntity;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
-import org.axonframework.queryhandling.jpa.repository.QueryUpdateRepository;
-import org.axonframework.queryhandling.jpa.repository.SubscriptionRepository;
+import org.axonframework.queryhandling.updatestore.model.QueryUpdateEntity;
+import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
+import org.axonframework.queryhandling.updatestore.repository.QueryUpdateRepository;
+import org.axonframework.queryhandling.updatestore.repository.SubscriptionRepository;
 import org.axonframework.serialization.Serializer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import static java.util.stream.StreamSupport.stream;
 
-/**
- * TODO explain underlying infra-structure
- * <p>
- * TODO establish clean-up
- * 1. overdue subscription
- * 2. stale updates
- */
 @Slf4j
-@Component
-@Transactional
 @SuppressWarnings("unchecked")
-public class JpaQueryUpdateStore implements QueryUpdateStore {
+public class DistributedQueryUpdateStore implements QueryUpdateStore {
 
     @Autowired
     private SubscriberIdentityService identityService;
@@ -42,7 +31,6 @@ public class JpaQueryUpdateStore implements QueryUpdateStore {
 
     @Autowired
     private QueryUpdateRepository queryUpdateRepository;
-
 
     @Override
     public SubscriptionId buildIdFromQuery(SubscriptionQueryMessage<?, ?, ?> query) {
@@ -68,16 +56,12 @@ public class JpaQueryUpdateStore implements QueryUpdateStore {
     }
 
     @Override
-    public void removeSubscription(SubscriptionId id) {
-        Optional<SubscriptionEntity> subOpt = subscriptionRepository.findById(id);
-        subOpt.ifPresent(sub -> {
-            queryUpdateRepository.findBySubscription(sub)
-                    .forEach(queryUpdateRepository::delete);
+    public void removeSubscription(SubscriptionId subscriptionId) {
+        queryUpdateRepository.findBySubscriptionId(subscriptionId)
+                .forEach(queryUpdateRepository::delete);
 
-            subscriptionRepository.deleteById(id);
-        });
-
-
+        subscriptionRepository.findById(subscriptionId)
+                .ifPresent(subscriptionRepository::delete);
     }
 
     @Override
@@ -90,21 +74,17 @@ public class JpaQueryUpdateStore implements QueryUpdateStore {
     @Override
     public <U> void postUpdate(SubscriptionEntity subscription, SubscriptionQueryUpdateMessage<U> update) {
         log.debug("posting for nodeId: " + subscription + " update: " + update);
-        queryUpdateRepository.save(new QueryUpdateEntity(subscription, update, messageSerializer));
+        queryUpdateRepository.save(new QueryUpdateEntity(subscription.getId(), update, messageSerializer));
     }
 
     @Override
     public <U> Optional<U> popUpdate(SubscriptionId subscriptionId) {
-        return subscriptionRepository.findById(subscriptionId).map(
-                sub -> {
-                    Optional<QueryUpdateEntity> updateOpt = queryUpdateRepository
-                            .findBySubscription((SubscriptionEntity) sub)
-                            .stream()
-                            .findFirst();
-                    updateOpt.ifPresent(queryUpdateRepository::delete);
-                    updateOpt.ifPresent(upt -> log.debug("Receiving update: " + upt));
-                    return updateOpt.map(que -> que.getPayload(messageSerializer)).orElse(null);
-                }
-        );
+        Optional<QueryUpdateEntity> updateOpt = queryUpdateRepository
+                .findBySubscriptionId(subscriptionId)
+                .stream()
+                .findFirst();
+        updateOpt.ifPresent(queryUpdateRepository::delete);
+        updateOpt.ifPresent(upt -> log.debug("Receiving update: " + upt));
+        return updateOpt.map(que -> que.getPayload(messageSerializer));
     }
 }

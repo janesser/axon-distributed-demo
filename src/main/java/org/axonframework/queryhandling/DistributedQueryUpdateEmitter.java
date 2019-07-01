@@ -3,15 +3,13 @@ package org.axonframework.queryhandling;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.common.Registration;
 import org.axonframework.messaging.MessageDispatchInterceptor;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
+import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
 import org.axonframework.serialization.Serializer;
-import org.springframework.stereotype.Component;
 import reactor.core.Disposable;
 import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.FluxSink;
 
 import javax.annotation.Resource;
-import java.util.concurrent.ScheduledFuture;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -19,7 +17,6 @@ import java.util.stream.Stream;
  * @see SimpleQueryUpdateEmitter
  */
 @Slf4j
-@Component
 public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
 
     @Resource
@@ -39,6 +36,8 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
 
     @Override
     public <U> void emit(Predicate<SubscriptionQueryMessage<?, ?, U>> filter, SubscriptionQueryUpdateMessage<U> update) {
+        localSegment.queryUpdateEmitter().emit(filter, update);
+
         String nodeId = subscriberIdentityService.getSubscriberIdentify();
 
         /*
@@ -48,11 +47,9 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
         Stream<SubscriptionEntity<Object, Object, U>> subscriptions =
                 queryUpdateStore.getSubscriptionsFiltered(filter, messageSerializer);
         subscriptions.forEach(subscription -> {
-            if (!subscription.getNodeId().equals(nodeId))
+            if (!subscription.getId().getNodeId().equals(nodeId))
                 queryUpdateStore.postUpdate(subscription, update);
         });
-
-        localSegment.queryUpdateEmitter().emit(filter, update);
     }
 
     @Override
@@ -93,8 +90,8 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
 
 
         // Start polling for updates
-        ScheduledFuture<?> scheduledFuture = queryUpdatePollingService.startPolling(
-                SubscriptionId.from(subscriptionEntity),
+        Registration pollingRegistration = queryUpdatePollingService.startPolling(
+                subscriptionEntity.getId(),
                 fluxSinkWrapper);
 
         // Subscribe to local updates
@@ -106,7 +103,7 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
         // Dispose all on Registration.cancel()
         Registration registration = () -> {
             boolean pollingCanceled =
-                    scheduledFuture.cancel(true);
+                    pollingRegistration.cancel();
             fluxSinkWrapper.complete();
 
             localSubscription.dispose();

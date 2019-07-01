@@ -1,4 +1,4 @@
-package org.axonframework.queryhandling.jpa.model;
+package org.axonframework.queryhandling.updatestore.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,50 +10,45 @@ import org.axonframework.queryhandling.SubscriptionQueryMessage;
 import org.axonframework.serialization.SerializedObject;
 import org.axonframework.serialization.Serializer;
 import org.axonframework.serialization.SimpleSerializedObject;
+import org.springframework.data.redis.core.RedisHash;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.List;
 
-import static org.axonframework.queryhandling.SubscriptionId.hash;
 import static org.axonframework.queryhandling.SubscriptionId.serialize;
 
 @Entity
-@IdClass(SubscriptionId.class)
+@RedisHash("subscription")
 @Data
 @NoArgsConstructor
 public class SubscriptionEntity<Q, I, U> {
 
     @Id
-    String nodeId;
-
-    @Id
-    String queryPayloadHash;
+    @EmbeddedId
+    private SubscriptionId id;
 
     @Lob
     @Column(length = 8 * 1024)
-    byte[] queryPayload;
-    String queryPayloadType;
-    String queryPayloadRevision;
+    private byte[] queryPayload;
+    private String queryPayloadType;
+    private String queryPayloadRevision;
 
-    String queryInitialResponseType;
-    String queryUpdateResponseType;
+    private String queryInitialResponseType;
+    private String queryUpdateResponseType;
 
-    Instant creationTime = Instant.now();
+    private Instant creationTime = Instant.now();
 
     public SubscriptionEntity(String nodeId,
                               Q queryPayload,
                               ResponseType<I> queryInitialResponseType,
                               ResponseType<U> queryUpdateResponseType,
                               Serializer serializer) {
-        this.nodeId = nodeId;
+        this.id = new SubscriptionId(nodeId, queryPayload, serializer);
 
         SerializedObject<byte[]> serializedPayload = serialize(queryPayload, serializer);
         this.queryPayload = serializedPayload.getData();
         this.queryPayloadType = serializedPayload.getType().getName();
         this.queryPayloadRevision = serializedPayload.getType().getRevision();
-
-        this.queryPayloadHash = hash(this.queryPayload);
 
         this.queryInitialResponseType = queryInitialResponseType.responseMessagePayloadType().getName();
         this.queryUpdateResponseType = queryUpdateResponseType.responseMessagePayloadType().getName();
@@ -72,7 +67,7 @@ public class SubscriptionEntity<Q, I, U> {
             );
             return new GenericSubscriptionQueryMessage<>(
                     payload,
-                    nodeId,
+                    id.getNodeId(),
                     ResponseTypes.instanceOf((Class<I>) Class.forName(queryInitialResponseType)),
                     ResponseTypes.instanceOf((Class<U>) Class.forName(queryUpdateResponseType))
             );

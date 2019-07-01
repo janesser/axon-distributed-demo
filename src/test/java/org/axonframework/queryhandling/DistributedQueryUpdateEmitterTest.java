@@ -2,8 +2,9 @@ package org.axonframework.queryhandling;
 
 import demo.DemoQuery;
 import demo.DemoQueryResult;
+import org.axonframework.common.Registration;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
+import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +15,6 @@ import reactor.core.publisher.FluxSink;
 import reactor.util.concurrent.Queues;
 
 import java.time.Duration;
-import java.util.concurrent.ScheduledFuture;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -26,7 +26,7 @@ public class DistributedQueryUpdateEmitterTest {
     private QueryUpdateStore queryUpdateStore;
 
     @Mock
-    private QueryUpdatePollingService queryUpdatePollingService;
+    private QueryUpdatePollingScheduledExecutorService queryUpdatePollingService;
 
     @Mock
     private SimpleQueryBus localSegment;
@@ -41,7 +41,7 @@ public class DistributedQueryUpdateEmitterTest {
     private SubscriptionEntity subscriptionEntity;
 
     @Mock
-    private ScheduledFuture<?> scheduledFuture;
+    private Registration pollingRegistration;
 
     @Captor
     private ArgumentCaptor<SubscriptionQueryMessage<DemoQuery, DemoQueryResult, DemoQueryResult>> sqmCaptor;
@@ -58,7 +58,7 @@ public class DistributedQueryUpdateEmitterTest {
 
     @Before
     public void mockPollingFuture() {
-        doReturn(scheduledFuture)
+        doReturn(pollingRegistration)
                 .when(queryUpdatePollingService)
                 .startPolling(any(), any());
     }
@@ -114,7 +114,7 @@ public class DistributedQueryUpdateEmitterTest {
                         ResponseTypes.instanceOf(DemoQueryResult.class)
                 );
 
-        doReturn(Boolean.TRUE).when(scheduledFuture).cancel(anyBoolean());
+        doReturn(Boolean.TRUE).when(pollingRegistration).cancel();
         when(localQueryUpdateEmitter
                 .registerUpdateHandler(any(), any(), anyInt())
                 .getRegistration()
@@ -131,8 +131,8 @@ public class DistributedQueryUpdateEmitterTest {
         // assert
         assertTrue(cancelled);
 
-        verify(scheduledFuture, times(1))
-                .cancel(true);
+        verify(pollingRegistration, times(1))
+                .cancel();
 
         verify(localQueryUpdateEmitter
                 .registerUpdateHandler(any(), any(), anyInt())

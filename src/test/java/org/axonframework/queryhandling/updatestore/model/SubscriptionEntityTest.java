@@ -1,4 +1,4 @@
-package org.axonframework.queryhandling.jpa.model;
+package org.axonframework.queryhandling.updatestore.model;
 
 import demo.DemoQuery;
 import demo.DemoQueryResult;

@@ -1,0 +1,233 @@
+Index: src/main/java/org/axonframework/queryhandling/JpaQueryBus.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.axonframework.queryhandling;\r\n\r\nimport lombok.Value;\r\nimport org.axonframework.common.Registration;\r\nimport org.axonframework.messaging.MessageDispatchInterceptor;\r\nimport org.axonframework.messaging.MessageHandler;\r\nimport org.axonframework.messaging.MessageHandlerInterceptor;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.beans.factory.annotation.Qualifier;\r\n\r\nimport javax.persistence.*;\r\nimport javax.transaction.Transactional;\r\nimport java.lang.management.ManagementFactory;\r\nimport java.lang.reflect.Type;\r\nimport java.time.Instant;\r\nimport java.util.Optional;\r\nimport java.util.concurrent.CompletableFuture;\r\nimport java.util.concurrent.TimeUnit;\r\nimport java.util.stream.Stream;\r\n\r\n/**\r\n * JpaQueryBus provides means to handle subscription with help of JPA.\r\n *\r\n * @see SimpleQueryBus\r\n */\r\n//@Component(\"queryBus\")\r\npublic class JpaQueryBus implements QueryBus {\r\n\r\n    @Autowired\r\n    @Qualifier(\"queryBus\")\r\n    QueryBus localQueryBus;\r\n\r\n    @PersistenceContext(name = \"jpaQueryBusPC\")\r\n    EntityManager em;\r\n\r\n    /**\r\n     * @see org.axonframework.eventhandling.tokenstore.jpa.JpaTokenStore.Builder JpaTokenStore (Builder) nodeId\r\n     */\r\n    String nodeId = ManagementFactory.getRuntimeMXBean().getName();\r\n\r\n    @Value\r\n    @Entity\r\n    @IdClass(RegistrationEntityId.class)\r\n    public static class RegistrationEntity {\r\n\r\n        @Id\r\n        String queryName;\r\n\r\n        @Id\r\n        String nodeId;\r\n\r\n        Instant creationTime = Instant.now();\r\n    }\r\n\r\n    @Value\r\n    public static class RegistrationEntityId {\r\n        String queryName;\r\n\r\n        String nodeId;\r\n    }\r\n\r\n    @Value\r\n    public class JpaRegistration implements Registration {\r\n\r\n        RegistrationEntityId registrationId;\r\n\r\n        Registration localRegistration;\r\n\r\n        @Transactional\r\n        @Override\r\n        public boolean cancel() {\r\n            RegistrationEntity registrationEntity = em.find(RegistrationEntity.class, registrationId);\r\n            em.remove(registrationEntity);\r\n            return localRegistration.cancel();\r\n        }\r\n    }\r\n\r\n    @Transactional\r\n    @Override\r\n    public <R> Registration subscribe(String queryName, Type responseType, MessageHandler<? super QueryMessage<?, R>> handler) {\r\n        final RegistrationEntityId registrationId = new RegistrationEntityId(queryName, nodeId);\r\n\r\n        RegistrationEntity registration = Optional.ofNullable(\r\n                em.find(RegistrationEntity.class, registrationId))\r\n                .orElse(new RegistrationEntity(queryName, nodeId));\r\n\r\n        em.merge(registration);\r\n\r\n        final Registration localRegistration = localQueryBus.subscribe(queryName, responseType, handler);\r\n\r\n        return new JpaRegistration(registrationId, localRegistration);\r\n    }\r\n\r\n\r\n    @Override\r\n    public <Q, R> CompletableFuture<QueryResponseMessage<R>> query(QueryMessage<Q, R> query) {\r\n        return localQueryBus.query(query);\r\n    }\r\n\r\n    @Override\r\n    public <Q, R> Stream<QueryResponseMessage<R>> scatterGather(QueryMessage<Q, R> query, long timeout, TimeUnit unit) {\r\n        return localQueryBus.scatterGather(query, timeout, unit);\r\n    }\r\n\r\n    @Override\r\n    public <Q, I, U> SubscriptionQueryResult<QueryResponseMessage<I>, SubscriptionQueryUpdateMessage<U>> subscriptionQuery(SubscriptionQueryMessage<Q, I, U> query, SubscriptionQueryBackpressure backpressure, int updateBufferSize) {\r\n        // TODO intercept here\r\n\r\n        return localQueryBus.subscriptionQuery(query, backpressure, updateBufferSize);\r\n    }\r\n\r\n    @Override\r\n    public QueryUpdateEmitter queryUpdateEmitter() {\r\n        QueryUpdateEmitter localQueryUpdateEmitter = localQueryBus.queryUpdateEmitter();\r\n\r\n        // TODO connect to subscription\r\n\r\n        return new JpaQueryUpdateEmitter(localQueryUpdateEmitter);\r\n    }\r\n\r\n    @Override\r\n    public Registration registerHandlerInterceptor(MessageHandlerInterceptor<? super QueryMessage<?, ?>> handlerInterceptor) {\r\n        return localQueryBus.registerHandlerInterceptor(handlerInterceptor);\r\n    }\r\n\r\n    @Override\r\n    public Registration registerDispatchInterceptor(MessageDispatchInterceptor<? super QueryMessage<?, ?>> dispatchInterceptor) {\r\n        return localQueryBus.registerDispatchInterceptor(dispatchInterceptor);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/org/axonframework/queryhandling/JpaQueryBus.java	(revision 82b5fc9b491acaef406d02a6af716f88a2fb4d15)
++++ src/main/java/org/axonframework/queryhandling/JpaQueryBus.java	(date 1561240216453)
+@@ -7,6 +7,7 @@
+ import org.axonframework.messaging.MessageHandlerInterceptor;
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.beans.factory.annotation.Qualifier;
++import reactor.util.concurrent.Queues;
+ 
+ import javax.persistence.*;
+ import javax.transaction.Transactional;
+@@ -30,6 +31,9 @@
+     @Qualifier("queryBus")
+     QueryBus localQueryBus;
+ 
++    @Autowired
++    JpaQueryUpdateEmitter jpaQueryUpdateEmitter;
++
+     @PersistenceContext(name = "jpaQueryBusPC")
+     EntityManager em;
+ 
+@@ -104,18 +108,20 @@
+ 
+     @Override
+     public <Q, I, U> SubscriptionQueryResult<QueryResponseMessage<I>, SubscriptionQueryUpdateMessage<U>> subscriptionQuery(SubscriptionQueryMessage<Q, I, U> query, SubscriptionQueryBackpressure backpressure, int updateBufferSize) {
+-        // TODO intercept here
++        SubscriptionQueryResult<QueryResponseMessage<I>, SubscriptionQueryUpdateMessage<U>> subscriptionQueryResult =
++                localQueryBus.subscriptionQuery(query, backpressure, updateBufferSize);
+ 
+-        return localQueryBus.subscriptionQuery(query, backpressure, updateBufferSize);
++        UpdateHandlerRegistration<U> updateHandlerRegistration =
++                jpaQueryUpdateEmitter.registerUpdateHandler(query, SubscriptionQueryBackpressure.defaultBackpressure(), Queues.SMALL_BUFFER_SIZE);
++
++        return new DefaultSubscriptionQueryResult<>(subscriptionQueryResult.initialResult(),
++                updateHandlerRegistration.getUpdates(),
++                updateHandlerRegistration.getRegistration());
+     }
+ 
+     @Override
+     public QueryUpdateEmitter queryUpdateEmitter() {
+-        QueryUpdateEmitter localQueryUpdateEmitter = localQueryBus.queryUpdateEmitter();
+-
+-        // TODO connect to subscription
+-
+-        return new JpaQueryUpdateEmitter(localQueryUpdateEmitter);
++        return jpaQueryUpdateEmitter;
+     }
+ 
+     @Override
+Index: src/main/java/org/axonframework/queryhandling/JpaQueryUpdateEmitter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.axonframework.queryhandling;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport org.axonframework.common.Registration;\r\nimport org.axonframework.messaging.MessageDispatchInterceptor;\r\n\r\nimport java.util.function.Predicate;\r\n\r\n/**\r\n * @see SimpleQueryUpdateEmitter\r\n */\r\n@AllArgsConstructor\r\npublic class JpaQueryUpdateEmitter implements QueryUpdateEmitter {\r\n\r\n    QueryUpdateEmitter localQueryUpdateEmitter;\r\n\r\n    @Override\r\n    public <U> void emit(Predicate<SubscriptionQueryMessage<?, ?, U>> filter, SubscriptionQueryUpdateMessage<U> update) {\r\n        localQueryUpdateEmitter.emit(filter, update);\r\n    }\r\n\r\n    @Override\r\n    public void complete(Predicate<SubscriptionQueryMessage<?, ?, ?>> filter) {\r\n        localQueryUpdateEmitter.complete(filter);\r\n    }\r\n\r\n\r\n    @Override\r\n    public void completeExceptionally(Predicate<SubscriptionQueryMessage<?, ?, ?>> filter, Throwable cause) {\r\n        localQueryUpdateEmitter.completeExceptionally(filter, cause);\r\n    }\r\n\r\n    @Override\r\n    public boolean queryUpdateHandlerRegistered(SubscriptionQueryMessage<?, ?, ?> query) {\r\n        return localQueryUpdateEmitter.queryUpdateHandlerRegistered(query);\r\n    }\r\n\r\n    @Override\r\n    public <U> UpdateHandlerRegistration<U> registerUpdateHandler(SubscriptionQueryMessage<?, ?, ?> query, SubscriptionQueryBackpressure backpressure, int updateBufferSize) {\r\n        return localQueryUpdateEmitter.registerUpdateHandler(query, backpressure, updateBufferSize);\r\n    }\r\n\r\n    @Override\r\n    public Registration registerDispatchInterceptor(MessageDispatchInterceptor<? super SubscriptionQueryUpdateMessage<?>> dispatchInterceptor) {\r\n        return localQueryUpdateEmitter.registerDispatchInterceptor(dispatchInterceptor);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/org/axonframework/queryhandling/JpaQueryUpdateEmitter.java	(revision 82b5fc9b491acaef406d02a6af716f88a2fb4d15)
++++ src/main/java/org/axonframework/queryhandling/JpaQueryUpdateEmitter.java	(date 1561247219528)
+@@ -1,21 +1,70 @@
+ package org.axonframework.queryhandling;
+ 
+-import lombok.AllArgsConstructor;
++import lombok.Value;
++import lombok.extern.slf4j.Slf4j;
+ import org.axonframework.common.Registration;
+ import org.axonframework.messaging.MessageDispatchInterceptor;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Component;
++import reactor.core.publisher.EmitterProcessor;
++import reactor.core.publisher.FluxSink;
+ 
++import javax.persistence.*;
++import javax.transaction.Transactional;
++import java.lang.management.ManagementFactory;
++import java.time.Instant;
++import java.util.Optional;
++import java.util.concurrent.Executors;
++import java.util.concurrent.ScheduledExecutorService;
++import java.util.concurrent.ScheduledFuture;
++import java.util.concurrent.TimeUnit;
+ import java.util.function.Predicate;
++import java.util.stream.Stream;
+ 
+ /**
+  * @see SimpleQueryUpdateEmitter
+  */
+-@AllArgsConstructor
++@Component("queryUpdateEmitter")
++@Slf4j
++@NamedQuery(name = "updateBySubscription", query = "select * from QueryUpdateEntity where subscription = :subscriptionId")
+ public class JpaQueryUpdateEmitter implements QueryUpdateEmitter {
+ 
++    private static final ScheduledExecutorService UPDATE_POLL = Executors.newSingleThreadScheduledExecutor();
++
++    @PersistenceContext(name = "jpaQueryBusPC")
++    EntityManager em;
++
++    @Autowired
+     QueryUpdateEmitter localQueryUpdateEmitter;
+ 
++    /**
++     * @see org.axonframework.eventhandling.tokenstore.jpa.JpaTokenStore.Builder JpaTokenStore (Builder) nodeId
++     */
++    String nodeId = ManagementFactory.getRuntimeMXBean().getName();
++
++
++    @Entity
++    @Value
++    public static class QueryUpdateEntity {
++        SubscriptionEntity subscription;
++
++        SubscriptionQueryUpdateMessage updatePayload;
++    }
++
+     @Override
+     public <U> void emit(Predicate<SubscriptionQueryMessage<?, ?, U>> filter, SubscriptionQueryUpdateMessage<U> update) {
++        /*
++         * TODO
++         * 1. filter subscriptions
++         * 2. for each: persist update
++         */
++        Stream<SubscriptionEntity> subscriptions = Stream.empty(); // TODO
++        subscriptions
++                .filter(filter::test)
++                .forEach(subscription -> {
++                    em.persist(new QueryUpdateEntity(subscription, update));
++                });
++
+         localQueryUpdateEmitter.emit(filter, update);
+     }
+ 
+@@ -30,14 +79,93 @@
+         localQueryUpdateEmitter.completeExceptionally(filter, cause);
+     }
+ 
++    @Transactional
+     @Override
+     public boolean queryUpdateHandlerRegistered(SubscriptionQueryMessage<?, ?, ?> query) {
+-        return localQueryUpdateEmitter.queryUpdateHandlerRegistered(query);
++        SubscriptionEntityId subscriptionEntityId = new SubscriptionEntityId(query.getQueryName(), nodeId);
++        return Optional.ofNullable(
++                em.find(SubscriptionEntity.class, subscriptionEntityId)
++        ).isPresent();
+     }
+ 
++    @Entity
++    @Value
++    @IdClass(SubscriptionEntityId.class)
++    public static class SubscriptionEntity extends GenericSubscriptionQueryMessage {
++
++        @Id
++        String queryName;
++
++        @Id
++        String nodeId;
++
++        Instant creationTime = Instant.now();
++    }
++
++    @Value
++    public static class SubscriptionEntityId {
++
++        String queryName;
++
++        String nodeId;
++    }
++
++    @Transactional
+     @Override
+     public <U> UpdateHandlerRegistration<U> registerUpdateHandler(SubscriptionQueryMessage<?, ?, ?> query, SubscriptionQueryBackpressure backpressure, int updateBufferSize) {
+-        return localQueryUpdateEmitter.registerUpdateHandler(query, backpressure, updateBufferSize);
++        /*
++         * 1. persist subscription
++         * 2. capture updates and persist'em
++         * 3. poll on updates and feed them into the flux
++         * 4. subscribe to local updates
++         */
++        SubscriptionEntityId subscriptionEntityId = new SubscriptionEntityId(query.getQueryName(), nodeId);
++        SubscriptionEntity subscriptionEntity = Optional.ofNullable(
++                em.find(SubscriptionEntity.class, subscriptionEntityId)
++        ).orElse(new SubscriptionEntity(query.getQueryName(), nodeId));
++        em.merge(subscriptionEntity);
++
++
++        EmitterProcessor<SubscriptionQueryUpdateMessage<U>> processor = EmitterProcessor.create(updateBufferSize);
++        FluxSink<SubscriptionQueryUpdateMessage<U>> sink = processor.sink(backpressure.getOverflowStrategy());
++        sink.onDispose(() -> removeUpdateHandler(query));
++        FluxSinkWrapper<SubscriptionQueryUpdateMessage<U>> fluxSinkWrapper = new FluxSinkWrapper<>(sink);
++
++
++        // start polling EntityManager
++        ScheduledFuture<?> scheduledFuture = UPDATE_POLL.scheduleAtFixedRate(() -> {
++            Optional<SubscriptionQueryUpdateMessage<U>> peek = popNextUpdate(subscriptionEntityId);
++            peek.ifPresent(upt -> fluxSinkWrapper.next(upt));
++        }, 1, 1, TimeUnit.SECONDS);
++
++        // Subscribe to local updates
++        UpdateHandlerRegistration<U> updateHandlerRegistration = localQueryUpdateEmitter.registerUpdateHandler(query, backpressure, updateBufferSize);
++        updateHandlerRegistration.getUpdates().subscribe(upt -> fluxSinkWrapper.next(upt));
++
++
++        Registration registration = () -> {
++            scheduledFuture.cancel(false); // cancel polling
++            fluxSinkWrapper.complete();
++            return true;
++        };
++
++        return new UpdateHandlerRegistration<>(registration,
++                processor.replay(updateBufferSize).autoConnect());
++    }
++
++    private <U> Optional<SubscriptionQueryUpdateMessage<U>> popNextUpdate(SubscriptionEntityId subscriptionEntityId) {
++        Query updatesBySubscription = em.createNamedQuery("updatesBySubscription");
++        updatesBySubscription.setParameter("subscription", subscriptionEntityId);
++        return updatesBySubscription.getResultStream().findFirst();
++    }
++
++    private void removeUpdateHandler(SubscriptionQueryMessage<?, ?, ?> query) {
++        SubscriptionEntityId subscriptionEntityId = new SubscriptionEntityId(query.getQueryName(), nodeId);
++        SubscriptionEntity subscriptionEntity = em.find(SubscriptionEntity.class, subscriptionEntityId);
++        if (subscriptionEntity != null)
++            em.remove(subscriptionEntity);
++        else
++            log.warn("No update handler found to remove: {}", query.getQueryName());
+     }
+ 
+     @Override
