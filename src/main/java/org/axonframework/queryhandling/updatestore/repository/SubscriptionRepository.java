@@ -1,14 +1,17 @@
-package org.axonframework.queryhandling.jpa.repository;
+package org.axonframework.queryhandling.updatestore.repository;
 
 import org.axonframework.messaging.responsetypes.ResponseType;
 import org.axonframework.queryhandling.SubscriptionId;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
+import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
 import org.axonframework.serialization.Serializer;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
+import java.time.Instant;
+import java.util.List;
 import java.util.Optional;
 
+@Repository
 public interface SubscriptionRepository<Q, I, U> extends CrudRepository<SubscriptionEntity<Q, I, U>, SubscriptionId> {
 
     default SubscriptionEntity<Q, I, U> getOrCreateSubscription(
@@ -30,6 +33,5 @@ public interface SubscriptionRepository<Q, I, U> extends CrudRepository<Subscrip
         return subscriptionEntity;
     }
 
-    @Transactional(Transactional.TxType.SUPPORTS)
-    Iterable<SubscriptionEntity<Q, I, U>> findAll();
+    List<SubscriptionEntity> findByCreationTimeLessThan(Instant minAge) ;
 }

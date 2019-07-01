@@ -1,15 +1,15 @@
-package org.axonframework.queryhandling.jpa;
+package org.axonframework.queryhandling.updatestore;
 
 import demo.DemoApp;
 import demo.DemoQuery;
 import demo.DemoQueryResult;
 import org.axonframework.messaging.responsetypes.ResponseType;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
-import org.axonframework.queryhandling.DistributedQueryBusAutoConfig;
+import org.axonframework.queryhandling.config.DistributedQueryBusAutoConfiguration;
 import org.axonframework.queryhandling.GenericSubscriptionQueryUpdateMessage;
 import org.axonframework.queryhandling.SubscriptionId;
 import org.axonframework.queryhandling.SubscriptionQueryUpdateMessage;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
+import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
 import org.axonframework.serialization.Serializer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,14 +24,14 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {
-        DistributedQueryBusAutoConfig.class,
+        DistributedQueryBusAutoConfiguration.class,
         DemoApp.class
 })
-@ActiveProfiles("spring-test")
-public class JpaQueryUpdateStoreTest {
+@ActiveProfiles("spring-test-hsqldb")
+public class DistributedQueryUpdateStoreTest {
 
     @Autowired
-    JpaQueryUpdateStore jpaQueryUpdateStore;
+    DistributedQueryUpdateStore jpaQueryUpdateStore;
 
     @Autowired
     Serializer messageSerializer;

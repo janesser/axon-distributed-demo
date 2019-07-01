@@ -5,6 +5,7 @@ import demo.DemoQuery;
 import demo.DemoQueryResult;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.*;
+import org.axonframework.queryhandling.config.DistributedQueryBusAutoConfiguration;
 import org.junit.runner.RunWith;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
@@ -22,12 +23,12 @@ import java.util.UUID;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {
-        DistributedQueryBusAutoConfig.class,
+        DistributedQueryBusAutoConfiguration.class,
         DemoApp.class
 })
 @BenchmarkMode(Mode.Throughput)
 @State(Scope.Benchmark)
-@ActiveProfiles("spring-test")
+@ActiveProfiles("spring-test-hsqldb")
 public abstract class AbstractQueryBusBenchmark extends AbstractBenchmarkTest {
 
     private static QueryBus queryBus;

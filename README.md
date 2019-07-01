@@ -38,6 +38,16 @@ This package supports SpringBoot AutoConfiguration.
 
 Build the jar and submit it to your local maven repository or equivalent.
 
+## Benchmark results
+Results taken on random hard-ware:
+
+| Benchmark                         | Mode   |  Cnt  |  Score   | Units |
+| --------------------------------- | ------ | ----- | -------: | ----- |
+| SimpleQueryBusBenchmark           | thrpt  |  2    |  269,422 | ops/s |
+| DistributedQueryBusJpaBenchmark   | thrpt  |  2    |  3,281   | ops/s |
+| DistributedQueryBusRedisBenchmark | thrpt  |  2    |  5,038   | ops/s |
+
 ## Todo
-1. There should be cleansing handling stale subscriptions and their updates.
-2. Performance should be benchmark, and scalability assured.
+1. ~~There should be cleansing handling stale subscriptions and their updates.~~
+2. ~~Performance should be benchmark, and scalability assured.~~
+3. make use of redis ttl

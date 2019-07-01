@@ -4,7 +4,6 @@ import org.axonframework.common.Registration;
 import org.axonframework.messaging.MessageDispatchInterceptor;
 import org.axonframework.messaging.MessageHandler;
 import org.axonframework.messaging.MessageHandlerInterceptor;
-import org.springframework.beans.factory.annotation.Autowired;
 import reactor.util.concurrent.Queues;
 
 import javax.annotation.Resource;
@@ -28,19 +27,20 @@ public class DistributedQueryBus implements QueryBus {
 
     @Override
     public <R> Registration subscribe(String queryName, Type responseType, MessageHandler<? super QueryMessage<?, R>> handler) {
-        // TODO when is this used?
+        // supports local projection only
         return localSegment.subscribe(queryName, responseType, handler);
     }
 
 
     @Override
     public <Q, R> CompletableFuture<QueryResponseMessage<R>> query(QueryMessage<Q, R> query) {
+        // supports local projection only
         return localSegment.query(query);
     }
 
     @Override
     public <Q, R> Stream<QueryResponseMessage<R>> scatterGather(QueryMessage<Q, R> query, long timeout, TimeUnit unit) {
-        // TODO should extend here too
+        // supports local projection only
         return localSegment.scatterGather(query, timeout, unit);
     }
 

@@ -1,7 +1,7 @@
 package org.axonframework.queryhandling;
 
 import org.axonframework.messaging.responsetypes.ResponseType;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
+import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
 import org.axonframework.serialization.Serializer;
 
 import java.util.Optional;

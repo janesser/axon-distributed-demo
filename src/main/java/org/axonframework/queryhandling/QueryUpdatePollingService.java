@@ -10,7 +10,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import static org.axonframework.queryhandling.jpa.model.QueryUpdateEntity.asSubscriptionQueryUpdateMessage;
+import static org.axonframework.queryhandling.updatestore.model.QueryUpdateEntity.asSubscriptionQueryUpdateMessage;
 
 @Slf4j
 public class QueryUpdatePollingService {

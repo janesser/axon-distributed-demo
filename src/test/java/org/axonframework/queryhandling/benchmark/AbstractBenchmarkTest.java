@@ -15,10 +15,10 @@ public abstract class AbstractBenchmarkTest {
     public void benchmark() throws RunnerException {
         Options options = new OptionsBuilder()
                 .include("\\." + this.getClass().getSimpleName() + "\\.")
-                .warmupIterations(0)
-                .measurementIterations(1)
+                .warmupIterations(1)
+                .measurementIterations(2)
                 .forks(0)
-                .threads(2)
+                .threads(3)
                 .shouldFailOnError(true)
                 .build();
 

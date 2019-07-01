@@ -3,7 +3,7 @@ package org.axonframework.queryhandling;
 import demo.DemoQuery;
 import demo.DemoQueryResult;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
+import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

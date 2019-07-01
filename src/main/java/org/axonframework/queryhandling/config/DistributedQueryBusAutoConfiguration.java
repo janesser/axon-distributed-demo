@@ -1,28 +1,26 @@
-package org.axonframework.queryhandling;
+package org.axonframework.queryhandling.config;
 
 import org.axonframework.common.transaction.TransactionManager;
 import org.axonframework.monitoring.MessageMonitor;
-import org.axonframework.queryhandling.jpa.JpaQueryUpdateStore;
+import org.axonframework.queryhandling.*;
+import org.axonframework.queryhandling.updatestore.DistributedQueryUpdateStore;
 import org.axonframework.spring.config.AxonConfiguration;
 import org.axonframework.springboot.autoconfig.AxonAutoConfiguration;
 import org.axonframework.springboot.util.RegisterDefaultEntities;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @AutoConfigureBefore(AxonAutoConfiguration.class)
 @RegisterDefaultEntities(packages = {
-        "org.axonframework.queryhandling.jpa.model"
+        "org.axonframework.queryhandling.updatestore.model"
 })
-@EnableJpaRepositories(basePackages = "org.axonframework.queryhandling.jpa.repository")
-public class DistributedQueryBusAutoConfig {
+public class DistributedQueryBusAutoConfiguration {
 
     @Primary
     @Bean("queryUpdateEmitter")
@@ -45,9 +43,10 @@ public class DistributedQueryBusAutoConfig {
 
     @Bean
     public QueryUpdateStore queryUpdateStore() {
-        return new JpaQueryUpdateStore();
+        return new DistributedQueryUpdateStore();
     }
 
+    @ConditionalOnMissingBean(SubscriberIdentityService.class)
     @Bean
     public SubscriberIdentityService subscriberIdentityService() {
         return new SubscriberIdentityService();

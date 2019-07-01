@@ -25,7 +25,11 @@ dependencies {
     }
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'redis.clients:jedis:2.10.2'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-webflux' // 
     compileOnly 'org.projectlombok:lombok'
@@ -38,4 +42,6 @@ dependencies {
 
     testImplementation 'org.openjdk.jmh:jmh-core:1.21'
     testRuntime 'org.openjdk.jmh:jmh-generator-annprocess:1.21'
+
+    testRuntime 'it.ozimov:embedded-redis:0.7.2'
 }

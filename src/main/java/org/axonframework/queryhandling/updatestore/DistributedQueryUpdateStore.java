@@ -1,35 +1,24 @@
-package org.axonframework.queryhandling.jpa;
+package org.axonframework.queryhandling.updatestore;
 
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.messaging.responsetypes.ResponseType;
 import org.axonframework.queryhandling.*;
-import org.axonframework.queryhandling.jpa.model.QueryUpdateEntity;
-import org.axonframework.queryhandling.jpa.model.SubscriptionEntity;
-import org.axonframework.queryhandling.jpa.repository.QueryUpdateRepository;
-import org.axonframework.queryhandling.jpa.repository.SubscriptionRepository;
+import org.axonframework.queryhandling.updatestore.model.QueryUpdateEntity;
+import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
+import org.axonframework.queryhandling.updatestore.repository.QueryUpdateRepository;
+import org.axonframework.queryhandling.updatestore.repository.SubscriptionRepository;
 import org.axonframework.serialization.Serializer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import static java.util.stream.StreamSupport.stream;
 
-/**
- * TODO explain underlying infra-structure
- * <p>
- * TODO establish clean-up
- * 1. overdue subscription
- * 2. stale updates
- */
 @Slf4j
-@Component
-@Transactional
 @SuppressWarnings("unchecked")
-public class JpaQueryUpdateStore implements QueryUpdateStore {
+public class DistributedQueryUpdateStore implements QueryUpdateStore {
 
     @Autowired
     private SubscriberIdentityService identityService;
@@ -42,7 +31,6 @@ public class JpaQueryUpdateStore implements QueryUpdateStore {
 
     @Autowired
     private QueryUpdateRepository queryUpdateRepository;
-
 
     @Override
     public SubscriptionId buildIdFromQuery(SubscriptionQueryMessage<?, ?, ?> query) {
