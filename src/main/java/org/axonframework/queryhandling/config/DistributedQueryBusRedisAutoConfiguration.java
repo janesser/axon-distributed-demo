@@ -20,7 +20,7 @@ import java.util.List;
  */
 @ConditionalOnProperty(
         prefix = "axon.queryhandling",
-        name = "updatestore",
+        name = "updatestore.backend",
         havingValue = "redis"
 )
 @Configuration

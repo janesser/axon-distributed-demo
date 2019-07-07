@@ -1,9 +1,11 @@
 package org.axonframework.queryhandling.benchmark;
 
 import demo.DemoApp;
-import org.axonframework.queryhandling.DistributedQueryBus;
-import org.axonframework.queryhandling.SubscriberIdentityService;
+import org.axonframework.monitoring.MessageMonitor;
+import org.axonframework.queryhandling.*;
 import org.axonframework.queryhandling.config.DistributedQueryBusAutoConfiguration;
+import org.axonframework.spring.config.AxonConfiguration;
+import org.mockito.Mockito;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,10 +13,13 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.ActiveProfiles;
 
-import java.util.UUID;
+import java.util.function.Predicate;
+
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.spy;
 
 @SpringBootTest(classes = {
-        DistributedQueryBusJpaBenchmark.RandomSubscriberIdentityConfiguration.class,
+        DistributedQueryBusJpaBenchmark.MutedLocalSegmentTestConfig.class,
         DistributedQueryBusAutoConfiguration.class,
         DemoApp.class
 })
@@ -22,18 +27,25 @@ import java.util.UUID;
 public class DistributedQueryBusJpaBenchmark extends AbstractQueryBusBenchmark {
 
     @TestConfiguration
-    public static class RandomSubscriberIdentityConfiguration {
+    public static class MutedLocalSegmentTestConfig {
 
-        @Bean
-        public SubscriberIdentityService subscriberIdentityService() {
-            return new SubscriberIdentityService() {
-                @Override
-                public String getSubscriberIdentify() {
-                    // never identify self
-                    return UUID.randomUUID().toString();
-                }
-            };
+        @Bean("localQueryUpdateEmitter")
+        public QueryUpdateEmitter localQueryUpdateEmitter(AxonConfiguration config) {
+            MessageMonitor<? super SubscriptionQueryUpdateMessage<?>> updateMessageMonitor =
+                    config.messageMonitor(QueryUpdateEmitter.class, "queryUpdateEmitter");
+            QueryUpdateEmitter spy = spy(SimpleQueryUpdateEmitter.builder()
+                    .updateMessageMonitor(updateMessageMonitor)
+                    .build());
+            muteLocalQueryUpdateEmitter(spy);
+            return spy;
         }
+    }
+
+    private static <U> void muteLocalQueryUpdateEmitter(QueryUpdateEmitter spy) {
+        doNothing().when(spy).emit(
+                Mockito.<Predicate<SubscriptionQueryMessage<?, ?, U>>>any(),
+                Mockito.<SubscriptionQueryUpdateMessage<U>>any()
+        );
     }
 
     @Autowired

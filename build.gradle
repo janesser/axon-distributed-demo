@@ -1,9 +1,17 @@
+buildscript {
+    dependencies {
+        classpath 'org.hibernate:hibernate-gradle-plugin:5.4.3.Final'
+    }
+}
+
 plugins {
     id 'org.springframework.boot' version '2.1.5.RELEASE'
     id 'java'
 }
 
 apply plugin: 'io.spring.dependency-management'
+// hibernate byte-code enhancer
+apply plugin: 'org.hibernate.orm'
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -20,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    compile(group: 'org.axonframework', name: 'axon-spring-boot-starter', version: '4.1.1') {
+    compile(group: 'org.axonframework', name: 'axon-spring-boot-starter', version: '4.1.2') {
         exclude group: 'org.axonframework', module: 'axon-server-connector'
     }
 

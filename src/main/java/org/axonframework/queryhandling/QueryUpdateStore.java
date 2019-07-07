@@ -2,17 +2,14 @@ package org.axonframework.queryhandling;
 
 import org.axonframework.messaging.responsetypes.ResponseType;
 import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
-import org.axonframework.serialization.Serializer;
 
 import java.util.Optional;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public interface QueryUpdateStore {
-    <Q, I, U> SubscriptionEntity<Q, I, U> getOrCreateSubscription(SubscriptionId id, Q payload, ResponseType<I> responseType, ResponseType<U> updateResponseType);
+    <Q, I, U> SubscriptionEntity<Q, I, U> createSubscription(SubscriptionId id, Q payload, ResponseType<I> responseType, ResponseType<U> updateResponseType);
 
-    default <Q, I, U> SubscriptionEntity<Q, I, U> getOrCreateSubscription(SubscriptionQueryMessage<Q, I, U> query) {
-        return getOrCreateSubscription(buildIdFromQuery(query), query.getPayload(), query.getResponseType(), query.getUpdateResponseType());
+    default <Q, I, U> SubscriptionEntity<Q, I, U> createSubscription(SubscriptionQueryMessage<Q, I, U> query) {
+        return createSubscription(buildIdFromQuery(query), query.getPayload(), query.getResponseType(), query.getUpdateResponseType());
     }
 
     boolean subscriptionExists(SubscriptionId id);
@@ -27,17 +24,7 @@ public interface QueryUpdateStore {
         removeSubscription(buildIdFromQuery(query));
     }
 
-    <Q, I, U> Stream<SubscriptionEntity<Q, I, U>> getSubscriptions(
-            Predicate<SubscriptionEntity<Q, I, U>> filter);
-
-    default <Q, I, U> Stream<SubscriptionEntity<Q, I, U>> getSubscriptionsFiltered(
-            Predicate<SubscriptionQueryMessage<?, ?, U>> filter,
-            Serializer serializer) {
-        return getSubscriptions(subscriptionEntity ->
-                filter.test(subscriptionEntity.asSubscriptionQueryMessage(serializer))
-        );
-    }
-
+    <Q, I, U> Iterable<SubscriptionEntity<Q, I, U>> getCurrentSubscriptions();
 
     <U> void postUpdate(SubscriptionEntity subscription, SubscriptionQueryUpdateMessage<U> update);
 
@@ -45,4 +32,5 @@ public interface QueryUpdateStore {
 
 
     SubscriptionId buildIdFromQuery(SubscriptionQueryMessage<?, ?, ?> query);
+
 }

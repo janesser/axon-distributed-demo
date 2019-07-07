@@ -38,7 +38,7 @@ public abstract class AbstractRepositoriesTest {
                         "9d4568c009d203ab10e33ea9953a0264");
 
         // act
-        SubscriptionEntity subscription = subscriptionRepository.getOrCreateSubscription(
+        SubscriptionEntity subscription = subscriptionRepository.createSubscription(
                 id,
                 new byte[0],
                 ResponseTypes.instanceOf(DemoQueryResult.class),
@@ -75,7 +75,7 @@ public abstract class AbstractRepositoriesTest {
                         "mockedNodeId",
                         "9d4568c009d203ab10e33ea9953a0264");
 
-        SubscriptionEntity subscription = subscriptionRepository.getOrCreateSubscription(
+        SubscriptionEntity subscription = subscriptionRepository.createSubscription(
                 id,
                 new byte[0],
                 ResponseTypes.instanceOf(DemoQueryResult.class),
@@ -100,7 +100,7 @@ public abstract class AbstractRepositoriesTest {
                         "mockedNodeId",
                         "9d4568c009d203ab10e33ea9953a0264");
 
-        subscriptionRepository.getOrCreateSubscription(
+        subscriptionRepository.createSubscription(
                 subscriptionId,
                 new byte[0],
                 ResponseTypes.instanceOf(DemoQueryResult.class),

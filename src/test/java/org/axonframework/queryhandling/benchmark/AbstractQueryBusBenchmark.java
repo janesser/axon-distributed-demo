@@ -10,12 +10,9 @@ import org.axonframework.queryhandling.QueryGateway;
 import org.axonframework.queryhandling.SubscriptionQueryResult;
 import org.axonframework.queryhandling.config.DistributedQueryBusAutoConfiguration;
 import org.junit.runner.RunWith;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.Duration;
@@ -29,21 +26,21 @@ import java.util.UUID;
         DistributedQueryBusAutoConfiguration.class,
         DemoApp.class
 })
-@BenchmarkMode(Mode.Throughput)
 @State(Scope.Benchmark)
-@ActiveProfiles("spring-test-hsqldb")
 public abstract class AbstractQueryBusBenchmark extends AbstractBenchmarkTest {
 
     private static QueryBus queryBus;
 
+    private static QueryGateway queryGateway;
+
     void setQueryBus(QueryBus queryBus) {
         AbstractQueryBusBenchmark.queryBus = queryBus;
+        AbstractQueryBusBenchmark.queryGateway = DefaultQueryGateway.builder()
+                .queryBus(queryBus)
+                .build();
     }
 
     public void benchmarkQueryBus() {
-        QueryGateway queryGateway = DefaultQueryGateway.builder()
-                .queryBus(queryBus)
-                .build();
         String aggId = UUID.randomUUID().toString();
 
         DemoQuery q = new DemoQuery(aggId);
@@ -59,7 +56,7 @@ public abstract class AbstractQueryBusBenchmark extends AbstractBenchmarkTest {
                 dq -> dq.equals(q),
                 new DemoQueryResult(aggId));
 
-        result.updates().blockFirst(Duration.ofSeconds(1L));
+        result.updates().blockFirst(Duration.ofSeconds(5L));
 
         result.close();
     }

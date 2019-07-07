@@ -5,19 +5,28 @@ import org.axonframework.common.Registration;
 import org.axonframework.messaging.MessageDispatchInterceptor;
 import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
 import org.axonframework.serialization.Serializer;
+import org.springframework.beans.factory.annotation.Value;
 import reactor.core.Disposable;
 import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.FluxSink;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 /**
  * @see SimpleQueryUpdateEmitter
  */
 @Slf4j
 public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
+
+    private static List<EmittedTuple> EMITTED_PAIRS = new CopyOnWriteArrayList<>();
 
     @Resource
     private QueryBus localSegment;
@@ -29,27 +38,58 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
     private QueryUpdateStore queryUpdateStore;
 
     @Resource
-    private SubscriberIdentityService subscriberIdentityService;
-
-    @Resource
     private Serializer messageSerializer;
+
+    @Value("${axon.queryhandling.DistributedQueryUpdateEmitter.emittedExpirationMillies:100}")
+    private long emittedExpirationMillis;
+
+    @SuppressWarnings("unchecked")
+    private Thread emitter = new Thread(() -> {
+        while (true) {
+            queryUpdateStore.getCurrentSubscriptions().forEach(
+                    sub -> {
+                        if (sub == null)
+                            return; // skip
+
+                        SubscriptionQueryMessage msg = sub.asSubscriptionQueryMessage(messageSerializer);
+                        List<EmittedTuple> processed = EMITTED_PAIRS.stream()
+                                .filter(p -> p.getFilter().test(msg))
+                                .peek(p ->
+                                        queryUpdateStore.postUpdate(sub, p.getUpdate())
+                                ).collect(Collectors.toList());
+
+                        EMITTED_PAIRS.removeAll(processed);
+
+                        // expiration
+                        Instant now = Instant.now();
+                        Duration maxAge = Duration.ofMillis(emittedExpirationMillis);
+                        List<EmittedTuple> expired = EMITTED_PAIRS.stream().filter(p ->
+                                Duration.between(now, p.getCreationTime()).compareTo(maxAge) > 0
+                        ).collect(Collectors.toList());
+                        EMITTED_PAIRS.removeAll(expired);
+                    }
+            );
+
+            Thread.yield();
+        }
+    });
+
+    @PostConstruct
+    public void startEmitterTimer() {
+        emitter.start();
+    }
+
+    @SuppressWarnings("deprecation")
+    @PreDestroy
+    public void stopEmitterTimer() {
+        emitter.stop();
+    }
 
     @Override
     public <U> void emit(Predicate<SubscriptionQueryMessage<?, ?, U>> filter, SubscriptionQueryUpdateMessage<U> update) {
         localSegment.queryUpdateEmitter().emit(filter, update);
 
-        String nodeId = subscriberIdentityService.getSubscriberIdentify();
-
-        /*
-         * 1. filter subscriptions
-         * 2. for each: persist update
-         */
-        Stream<SubscriptionEntity<Object, Object, U>> subscriptions =
-                queryUpdateStore.getSubscriptionsFiltered(filter, messageSerializer);
-        subscriptions.forEach(subscription -> {
-            if (!subscription.getId().getNodeId().equals(nodeId))
-                queryUpdateStore.postUpdate(subscription, update);
-        });
+        EMITTED_PAIRS.add(new EmittedTuple<>(filter, update));
     }
 
     @Override
@@ -79,7 +119,7 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
          */
 
         // Persist subscription
-        SubscriptionEntity subscriptionEntity = queryUpdateStore.getOrCreateSubscription(query);
+        SubscriptionEntity subscriptionEntity = queryUpdateStore.createSubscription(query);
 
 
         // Initialize Flux
@@ -120,5 +160,12 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
     @Override
     public Registration registerDispatchInterceptor(MessageDispatchInterceptor<? super SubscriptionQueryUpdateMessage<?>> dispatchInterceptor) {
         return localSegment.queryUpdateEmitter().registerDispatchInterceptor(dispatchInterceptor);
+    }
+
+    @lombok.Value
+    private class EmittedTuple<U> {
+        private final Predicate<SubscriptionQueryMessage<?, ?, U>> filter;
+        private final SubscriptionQueryUpdateMessage<U> update;
+        private Instant creationTime = Instant.now();
     }
 }

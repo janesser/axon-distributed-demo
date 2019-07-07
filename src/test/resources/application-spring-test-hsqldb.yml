@@ -8,3 +8,7 @@ spring:
       ddl-auto: create
     properties:
       hibernate.dialect: org.hibernate.dialect.HSQLDialect
+
+logging:
+  level:
+    org.axonframework.queryhandling.updatestore.DistributedQueryUpdateStore: off

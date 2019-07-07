@@ -5,4 +5,5 @@ spring:
 
 axon:
   queryhandling:
-    updatestore: redis
+    updatestore:
+      backend: redis

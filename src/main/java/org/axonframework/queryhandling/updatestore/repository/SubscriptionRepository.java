@@ -16,7 +16,7 @@ import java.util.Optional;
 @Repository
 public interface SubscriptionRepository<Q, I, U> extends CrudRepository<SubscriptionEntity<Q, I, U>, SubscriptionId> {
 
-    default SubscriptionEntity<Q, I, U> getOrCreateSubscription(
+    default SubscriptionEntity<Q, I, U> createSubscription(
             SubscriptionId id,
             Q payload,
             ResponseType<I> initialResponseType,

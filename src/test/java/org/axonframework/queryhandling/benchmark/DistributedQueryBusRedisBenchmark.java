@@ -8,7 +8,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest(classes = {
-        DistributedQueryBusJpaBenchmark.RandomSubscriberIdentityConfiguration.class,
+        DistributedQueryBusJpaBenchmark.MutedLocalSegmentTestConfig.class,
         EmbeddedRedisTestConfiguration.class,
         DistributedQueryBusAutoConfiguration.class,
         DemoApp.class

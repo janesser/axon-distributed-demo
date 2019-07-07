@@ -45,13 +45,13 @@ public class DistributedQueryUpdateStoreTest {
         ResponseType<DemoQueryResult> updateResponseType = ResponseTypes.instanceOf(DemoQueryResult.class);
 
         // act
-        SubscriptionEntity subscription = jpaQueryUpdateStore.getOrCreateSubscription(
+        SubscriptionEntity subscription = jpaQueryUpdateStore.createSubscription(
                 id,
                 query,
                 initialResponseType,
                 updateResponseType
         );
-        SubscriptionEntity subscription2 = jpaQueryUpdateStore.getOrCreateSubscription(
+        SubscriptionEntity subscription2 = jpaQueryUpdateStore.createSubscription(
                 id,
                 query,
                 initialResponseType,
@@ -73,7 +73,7 @@ public class DistributedQueryUpdateStoreTest {
         ResponseType<DemoQueryResult> updateResponseType = ResponseTypes.instanceOf(DemoQueryResult.class);
 
         // act
-        jpaQueryUpdateStore.getOrCreateSubscription(
+        jpaQueryUpdateStore.createSubscription(
                 id,
                 query,
                 initialResponseType,
@@ -95,7 +95,7 @@ public class DistributedQueryUpdateStoreTest {
         ResponseType<DemoQueryResult> initialResponseType = ResponseTypes.instanceOf(DemoQueryResult.class);
         ResponseType<DemoQueryResult> updateResponseType = ResponseTypes.instanceOf(DemoQueryResult.class);
 
-        SubscriptionEntity subscription = jpaQueryUpdateStore.getOrCreateSubscription(
+        SubscriptionEntity subscription = jpaQueryUpdateStore.createSubscription(
                 id,
                 query,
                 initialResponseType,

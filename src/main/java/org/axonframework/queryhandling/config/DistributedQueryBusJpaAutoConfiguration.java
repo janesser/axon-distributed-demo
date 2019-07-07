@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @ConditionalOnProperty(
         prefix = "axon.queryhandling",
-        name = "updatestore",
+        name = "updatestore.backend",
         havingValue = "jpa",
         matchIfMissing = true
 )
@@ -19,15 +19,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = "org.axonframework.queryhandling.updatestore.repository")
 public class DistributedQueryBusJpaAutoConfiguration {
 
-    @Value("${cleanRateSeconds:5}")
-    private long cleanRateSeconds;
-
-    @Value("${updateAgeSeconds:300}")
-    private long updateAgeSeconds;
-
-    @Value("${subscriptionAgeSeconds:600}")
-    private long subscriptionAgeSeconds;
-
     @ConditionalOnProperty(
             prefix = "axon.queryhandling",
             name = "updatestore.cleansing",
@@ -35,11 +26,7 @@ public class DistributedQueryBusJpaAutoConfiguration {
     )
     @Bean
     public JpaStoreCleansing storeCleansing() {
-        return new JpaStoreCleansing(
-                cleanRateSeconds,
-                updateAgeSeconds,
-                subscriptionAgeSeconds
-        );
+        return new JpaStoreCleansing();
     }
 
 }

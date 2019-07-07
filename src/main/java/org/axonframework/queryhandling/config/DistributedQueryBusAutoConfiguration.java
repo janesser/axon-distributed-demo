@@ -6,6 +6,7 @@ import org.axonframework.queryhandling.*;
 import org.axonframework.queryhandling.updatestore.DistributedQueryUpdateStore;
 import org.axonframework.spring.config.AxonConfiguration;
 import org.axonframework.springboot.autoconfig.AxonAutoConfiguration;
+import org.axonframework.springboot.util.ConditionalOnMissingQualifiedBean;
 import org.axonframework.springboot.util.RegisterDefaultEntities;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -57,6 +58,7 @@ public class DistributedQueryBusAutoConfiguration {
     /*
      * copy from org.axonframework.config.DefaultConfigurer.defaultQueryUpdateEmitter
      */
+    @ConditionalOnMissingQualifiedBean(qualifier = "localQueryUpdateEmitter")
     @Bean("localQueryUpdateEmitter")
     public QueryUpdateEmitter localQueryUpdateEmitter(AxonConfiguration config) {
         MessageMonitor<? super SubscriptionQueryUpdateMessage<?>> updateMessageMonitor =

@@ -26,7 +26,7 @@ public class DistributedQueryUpdateEmitterTest {
     private QueryUpdateStore queryUpdateStore;
 
     @Mock
-    private QueryUpdatePollingScheduledExecutorService queryUpdatePollingService;
+    private QueryUpdatePollingService queryUpdatePollingService;
 
     @Mock
     private SimpleQueryBus localSegment;
@@ -53,7 +53,7 @@ public class DistributedQueryUpdateEmitterTest {
     public void mockQueryUpdateStore() {
         doReturn(subscriptionEntity)
                 .when(queryUpdateStore)
-                .getOrCreateSubscription(any(SubscriptionQueryMessage.class));
+                .createSubscription(any(SubscriptionQueryMessage.class));
     }
 
     @Before
@@ -87,7 +87,7 @@ public class DistributedQueryUpdateEmitterTest {
 
         // assert
         verify(queryUpdateStore, times(1))
-                .getOrCreateSubscription(sqm);
+                .createSubscription(sqm);
 
         verify(queryUpdatePollingService, times(1))
                 .startPolling(any(), any());

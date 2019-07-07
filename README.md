@@ -44,11 +44,12 @@ Results taken on random hard-ware:
 | Benchmark                         | Mode   |  Cnt  |  Score     | Units |
 | --------------------------------- | ------ | ----- | ---------: | ----- |
 | SimpleQueryBusBenchmark           | thrpt  |  2    | 141846,867 | ops/s |
-| DistributedQueryBusJpaBenchmark   | thrpt  |  2    |     30,446 | ops/s |
-| DistributedQueryBusRedisBenchmark | thrpt  |  2    |     11,529 | ops/s |
+| DistributedQueryBusJpaBenchmark   | thrpt  |  2    |    187,919 | ops/s |
+| DistributedQueryBusRedisBenchmark | thrpt  |  2    |    392,063 | ops/s |
 
 ## Todo
 1. ~~There should be cleansing handling stale subscriptions and their updates.~~
-2. ~~Performance should be benchmark, and scalability assured.~~
-3. make use of redis ttl
-4. reach baseline of 100 ops/sec
+1. ~~Performance should be benchmark, and scalability assured.~~
+1. ~~reach baseline of 100 ops/sec~~
+1. ~~harden benchmark approach~~
+1. make use of redis ttl
