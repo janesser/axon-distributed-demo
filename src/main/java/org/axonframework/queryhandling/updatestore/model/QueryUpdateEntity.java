@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import org.axonframework.queryhandling.GenericSubscriptionQueryUpdateMessage;
 import org.axonframework.queryhandling.SubscriptionId;
 import org.axonframework.queryhandling.SubscriptionQueryUpdateMessage;
+import org.axonframework.queryhandling.updatestore.repository.redis.SubscriptionIdRedisStringWriter;
 import org.axonframework.serialization.SerializedObject;
 import org.axonframework.serialization.Serializer;
 import org.axonframework.serialization.SimpleSerializedObject;
@@ -19,6 +20,11 @@ import java.time.Instant;
  * @see org.axonframework.eventhandling.AbstractEventEntry
  */
 @Entity
+@Table(
+        indexes = {
+                @Index(columnList = "subscriptionId")
+        }
+)
 @RedisHash("queryUpdate")
 @Data
 @NoArgsConstructor
@@ -36,7 +42,7 @@ public class QueryUpdateEntity {
     // omit all kind of EntityGraph
     // @ManyToOne(targetEntity = SubscriptionEntity.class)
     @Indexed
-    private SubscriptionId subscriptionId;
+    private String subscriptionId;
 
     @Lob
     @Column(length = 16 * 1024)
@@ -47,7 +53,7 @@ public class QueryUpdateEntity {
     private Instant creationTime = Instant.now();
 
     public QueryUpdateEntity(SubscriptionId subscriptionId, SubscriptionQueryUpdateMessage<?> updateMessage, Serializer serializer) {
-        this.subscriptionId = subscriptionId;
+        setSubscriptionIdObj(subscriptionId);
 
         SerializedObject<byte[]> serializePayload = updateMessage.serializePayload(serializer, byte[].class);
         this.updatePayload = serializePayload.getData();
@@ -64,5 +70,10 @@ public class QueryUpdateEntity {
                 updatePayloadRevision
         );
         return serializer.deserialize(sso);
+    }
+
+    @Transient
+    public void setSubscriptionIdObj(SubscriptionId subscriptionId) {
+        this.subscriptionId = new SubscriptionIdRedisStringWriter().convert(subscriptionId);
     }
 }

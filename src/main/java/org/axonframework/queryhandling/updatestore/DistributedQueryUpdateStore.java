@@ -83,8 +83,12 @@ public class DistributedQueryUpdateStore implements QueryUpdateStore {
                 .findBySubscriptionId(subscriptionId)
                 .stream()
                 .findFirst();
-        updateOpt.ifPresent(queryUpdateRepository::delete);
-        updateOpt.ifPresent(upt -> log.debug("Receiving update: " + upt));
+
+        updateOpt.ifPresent(upt -> {
+            log.debug("Receiving update: " + upt);
+            queryUpdateRepository.delete(upt);
+        });
+
         return updateOpt.map(que -> que.getPayload(messageSerializer));
     }
 }
