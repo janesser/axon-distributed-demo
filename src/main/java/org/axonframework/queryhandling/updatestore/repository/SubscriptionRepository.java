@@ -4,13 +4,9 @@ import org.axonframework.messaging.responsetypes.ResponseType;
 import org.axonframework.queryhandling.SubscriptionId;
 import org.axonframework.queryhandling.updatestore.model.SubscriptionEntity;
 import org.axonframework.serialization.Serializer;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.time.Instant;
-import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -35,7 +31,4 @@ public interface SubscriptionRepository<Q, I, U> extends CrudRepository<Subscrip
     }
 
     Optional<SubscriptionEntity<Q, I, U>> findById(SubscriptionId id);
-
-    // TODO untested with Redis
-    List<SubscriptionEntity> findByCreationTimeLessThan(Instant minAge);
 }

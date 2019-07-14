@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 public class SubscriptionEntityTest {
 
-    XStreamSerializer serializer = XStreamSerializer.defaultSerializer();
+    private final XStreamSerializer serializer = XStreamSerializer.defaultSerializer();
 
     @Test
     public void testSerializationLoop() {

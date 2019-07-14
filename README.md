@@ -41,15 +41,18 @@ Build the jar and submit it to your local maven repository or equivalent.
 ## Benchmark results
 Results taken on random hard-ware:
 
-| Benchmark                         | Mode   |  Cnt  |  Score     | Units |
-| --------------------------------- | ------ | ----- | ---------: | ----- |
-| SimpleQueryBusBenchmark           | thrpt  |  2    | 141846,867 | ops/s |
-| DistributedQueryBusJpaBenchmark   | thrpt  |  2    |    187,919 | ops/s |
-| DistributedQueryBusRedisBenchmark | thrpt  |  2    |    392,063 | ops/s |
+| Benchmark                                             | Mode  |Cnt| Score      | Units |
+| ----------------------------------------------------- | ----- | - | ---------: | ----- |
+| SimpleQueryBusBenchmark.closeSubscription             | thrpt | 2 | 133851,913 | ops/s |
+| SimpleQueryBusBenchmark.leaveSubscription             | thrpt | 2 |    659,467 | ops/s |
+| DistributedQueryBusJpaBenchmark.closeSubscription     | thrpt | 2 |     81,275 | ops/s |
+| DistributedQueryBusJpaBenchmark.leaveSubscription     | thrpt | 2 |     32,752 | ops/s |
+| DistributedQueryBusRedisBenchmark.closeSubscription   | thrpt | 2 |     46,759 | ops/s |
+| DistributedQueryBusRedisBenchmark.leaveSubscription   | thrpt | 2 |     27,179 | ops/s |
 
 ## Todo
 1. ~~There should be cleansing handling stale subscriptions and their updates.~~
 1. ~~Performance should be benchmark, and scalability assured.~~
 1. ~~reach baseline of 100 ops/sec~~
 1. ~~harden benchmark approach~~
-1. make use of redis ttl
+1. ~~make use of redis ttl~~

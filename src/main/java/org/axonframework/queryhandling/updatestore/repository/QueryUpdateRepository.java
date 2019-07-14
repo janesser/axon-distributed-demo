@@ -6,7 +6,6 @@ import org.axonframework.queryhandling.updatestore.repository.redis.Subscription
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.Instant;
 import java.util.List;
 
 @Repository
@@ -18,6 +17,4 @@ public interface QueryUpdateRepository extends CrudRepository<QueryUpdateEntity,
 
     List<QueryUpdateEntity> findBySubscriptionId(String subscriptionId);
 
-    // TODO untested with Redis
-    List<QueryUpdateEntity> findByCreationTimeLessThan(Instant minAge);
 }

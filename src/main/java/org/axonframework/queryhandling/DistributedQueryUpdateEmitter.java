@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
 
-    private static List<EmittedTuple> EMITTED_PAIRS = new CopyOnWriteArrayList<>();
+    private static final List<EmittedTuple> EMITTED_PAIRS = new CopyOnWriteArrayList<>();
 
     @Resource
     private QueryBus localSegment;
@@ -44,7 +44,7 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
     private long emittedExpirationMillis;
 
     @SuppressWarnings("unchecked")
-    private Thread emitter = new Thread(() -> {
+    private final Thread emitter = new Thread(() -> {
         while (true) {
             queryUpdateStore.getCurrentSubscriptions().forEach(
                     sub -> {
@@ -163,7 +163,7 @@ public class DistributedQueryUpdateEmitter implements QueryUpdateEmitter {
     }
 
     @lombok.Value
-    private class EmittedTuple<U> {
+    class EmittedTuple<U> {
         private final Predicate<SubscriptionQueryMessage<?, ?, U>> filter;
         private final SubscriptionQueryUpdateMessage<U> update;
         private Instant creationTime = Instant.now();

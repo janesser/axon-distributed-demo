@@ -4,12 +4,16 @@ import org.axonframework.common.transaction.TransactionManager;
 import org.axonframework.monitoring.MessageMonitor;
 import org.axonframework.queryhandling.*;
 import org.axonframework.queryhandling.updatestore.DistributedQueryUpdateStore;
+import org.axonframework.queryhandling.updatestore.JmxSubscriberIdentityService;
+import org.axonframework.queryhandling.updatestore.SubscriberIdentityService;
 import org.axonframework.spring.config.AxonConfiguration;
 import org.axonframework.springboot.autoconfig.AxonAutoConfiguration;
+import org.axonframework.springboot.autoconfig.AxonServerAutoConfiguration;
 import org.axonframework.springboot.util.ConditionalOnMissingQualifiedBean;
 import org.axonframework.springboot.util.RegisterDefaultEntities;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +25,10 @@ import org.springframework.context.annotation.Primary;
 @RegisterDefaultEntities(packages = {
         "org.axonframework.queryhandling.updatestore.model"
 })
+/*
+ * mutually exclusive
+ */
+@EnableAutoConfiguration(exclude = AxonServerAutoConfiguration.class)
 public class DistributedQueryBusAutoConfiguration {
 
     @Primary
@@ -52,7 +60,7 @@ public class DistributedQueryBusAutoConfiguration {
     @ConditionalOnMissingBean(SubscriberIdentityService.class)
     @Bean
     public SubscriberIdentityService subscriberIdentityService() {
-        return new SubscriberIdentityService();
+        return new JmxSubscriberIdentityService();
     }
 
     /*

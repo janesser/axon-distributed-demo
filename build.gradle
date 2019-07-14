@@ -28,9 +28,7 @@ repositories {
 }
 
 dependencies {
-    compile(group: 'org.axonframework', name: 'axon-spring-boot-starter', version: '4.1.2') {
-        exclude group: 'org.axonframework', module: 'axon-server-connector'
-    }
+    compile(group: 'org.axonframework', name: 'axon-spring-boot-starter', version: '4.1.2')
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 

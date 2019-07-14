@@ -19,6 +19,7 @@ import java.time.Duration;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+@SuppressWarnings("unchecked")
 @RunWith(MockitoJUnitRunner.class)
 public class DistributedQueryUpdateEmitterTest {
 

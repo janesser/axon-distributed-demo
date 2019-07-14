@@ -11,6 +11,7 @@ import org.axonframework.serialization.SerializedObject;
 import org.axonframework.serialization.Serializer;
 import org.axonframework.serialization.SimpleSerializedObject;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.TimeToLive;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -37,6 +38,9 @@ public class SubscriptionEntity<Q, I, U> {
     private String queryUpdateResponseType;
 
     private Instant creationTime = Instant.now();
+
+    @TimeToLive
+    private int timeoutSeconds = 1;
 
     public SubscriptionEntity(String nodeId,
                               Q queryPayload,

@@ -31,9 +31,9 @@ public class SubscriptionId implements Serializable {
         );
     }
 
-    String nodeId;
+    private String nodeId;
 
-    String queryPayloadHash;
+    private String queryPayloadHash;
 
     public SubscriptionId(String nodeId, Object query, Serializer serializer) {
         this(nodeId, serialize(query, serializer).getData());

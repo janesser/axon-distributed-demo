@@ -10,6 +10,7 @@ import org.axonframework.queryhandling.QueryGateway;
 import org.axonframework.queryhandling.SubscriptionQueryResult;
 import org.axonframework.queryhandling.config.DistributedQueryBusAutoConfiguration;
 import org.junit.runner.RunWith;
+import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -40,7 +41,17 @@ public abstract class AbstractQueryBusBenchmark extends AbstractBenchmarkTest {
                 .build();
     }
 
-    public void benchmarkQueryBus() {
+    @Benchmark
+    public void closeSubscription() {
+        benchmarkQueryBus(true);
+    }
+
+    @Benchmark
+    public void leaveSubscription() {
+        benchmarkQueryBus(false);
+    }
+
+    private void benchmarkQueryBus(boolean closeSubscription) {
         String aggId = UUID.randomUUID().toString();
 
         DemoQuery q = new DemoQuery(aggId);
@@ -58,6 +69,7 @@ public abstract class AbstractQueryBusBenchmark extends AbstractBenchmarkTest {
 
         result.updates().blockFirst(Duration.ofSeconds(5L));
 
-        result.close();
+        if (closeSubscription)
+            result.close();
     }
 }
